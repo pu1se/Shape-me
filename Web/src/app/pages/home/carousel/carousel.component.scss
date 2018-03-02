@@ -1,0 +1,56 @@
+﻿@import "~assets/styles/style-variables.scss";
+
+.rightRs,.leftRs {
+  cursor: pointer;
+  position: absolute;
+  margin: auto;
+  top: 30%;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  opacity: 0.8;
+  border: 1px solid $main-light-color;
+  background-color: $main-light-background-color;
+
+  i{
+    font-size:40px;
+    color: $main-light-color;
+  }
+}
+
+.rightRs{
+  right: 10px;
+}
+
+.leftRs{
+  left: 10px;
+}
+
+a{
+  color: white;
+}
+
+.content {
+  overflow: hidden;
+  width: 220px;
+  height: auto;
+
+  h4{
+    font-size: 30px;
+    line-height: 340px;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 0px 0px 10px #fff;
+  }
+}
+
+.content.active{
+  position: static;
+}
+
+.item {
+  height: 50vh;
+  min-height: 80px;
+  max-height: 220px;
+}

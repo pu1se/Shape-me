@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>{{this.productItem.name}}</h2>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div *ngFor="let item of this.productItem.productList; let i = index">
+      <div class="col-md-4" >
+        <img src="{{item.imageUrl}}" style="width:250px;" />
+        <h5>{{item.name}}</h5>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Что мы делаем</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-sliding-accordion [list]="this.groupList"></app-sliding-accordion>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<div class="container-fluid" style="margin: 0;padding: 0;">
+  <app-advantages-panel></app-advantages-panel>
+</div>
+
+<br/>
+<br/>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Наши топовые товары</h2>
+    </div>
+  </div>
+<app-collapse-panel *ngFor="let groupItem of this.groupList" [item]="groupItem"></app-collapse-panel>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div class="container-fluid" style="background-color: #d5f6ec">
+  <div class="row">
+    <div class="col">
+      <h2>О нас</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p>Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
+        Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla </p>
+    </div>
+  </div>
+</div>

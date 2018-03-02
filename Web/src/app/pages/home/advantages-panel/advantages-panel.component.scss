@@ -1,0 +1,18 @@
+@import "~assets/styles/style-variables.scss";
+
+h4{
+  margin-bottom: 10px;
+  color: $main-light-color;
+}
+
+i{
+  color: $main-color;
+  float: left; margin: 5px; font-size: 20px; margin-right: 10px;
+  padding-bottom: 20px;
+}
+
+p{
+  color: #aaa;
+  margin-left: 32px;
+  font-size: 14px;
+}

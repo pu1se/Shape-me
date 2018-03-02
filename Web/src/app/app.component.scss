@@ -1,0 +1,93 @@
+@import "~assets/styles/style-variables.scss";
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 85px;
+    z-index: 3;
+    outline: 1px solid #eee;
+    background-color: white;
+    box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+
+    .header-logo{
+        height: 100%;
+        width: 3%;
+        display: block;
+        float: left;
+        padding-left: 11px;
+        img {
+            height: 75px;
+            width: 23vw;
+        }
+    }
+
+    .contacts{
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        height: 35px;
+
+        .contact-info{
+            float: right;
+            padding: 0 5px;
+
+            i{
+                color: $main-light-color;
+                padding: 4px;
+            }
+
+            .fa-envelope-o, .fa-skype{
+                padding-left: 20px;
+                margin-left: 20px;
+                border-left: 1px solid #e9e9e9;
+            }
+        }
+    }
+
+    nav{
+        float: right;
+        margin: 0;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+                position: relative;
+                white-space: nowrap;
+                float: left;
+                margin-left: 10px;
+
+                a{
+                    padding: 13px 8px;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-family: "Raleway", sans-serif;
+                    font-weight: 700;
+                    font-size: 14px;
+                    outline: none;
+                    &.active{
+                        padding-bottom: 3px;
+                        border-bottom: 3px solid $main-light-color;
+                        color: $main-light-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.main{
+    margin: 100px 0 0 0;
+}
+
+footer{
+  border-top: 1px solid #ddd; text-align: center;padding: 10px;font-size: 14px;
+
+  span{
+    color: #aaa
+  }
+}

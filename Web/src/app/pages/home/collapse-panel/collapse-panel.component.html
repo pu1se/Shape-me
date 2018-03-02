@@ -1,0 +1,20 @@
+<div class="collapse-container">
+  <div class="collapse-header" [class.active]="!this.isCollapsed">
+    <div class="collapse-control" (click)="this.isCollapsed = !this.isCollapsed">
+      <i class="fa fa-plus" [class.active]="!this.isCollapsed" aria-hidden="true"></i>
+    </div>
+    <div id="{{item.type}}" class="collapse-text" (click)="this.isCollapsed = !this.isCollapsed" [class.active]="!this.isCollapsed">
+      <span class="name">{{ item.name }}</span>
+    </div>
+    <div class="link">
+      <a routerLink="{{item.link}}">
+        <i class="fa fa-list-ul" aria-hidden="true"></i>
+        <span>Посмотреть всё</span>
+      </a>
+    </div>
+  </div>
+  <div class="collapse-content" [collapse]="isCollapsed" [class.active]="!this.isCollapsed">
+    <!--<carousel [items]="data" [type]="type" [meta]="meta"></carousel>-->
+    <app-carousel [list]="item.productList"></app-carousel>
+  </div>
+</div>

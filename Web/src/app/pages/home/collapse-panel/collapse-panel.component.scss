@@ -1,0 +1,70 @@
+@import "~assets/styles/style-variables.scss";
+
+.collapse-container {
+
+  .collapse-content {
+    padding-top: 15px;
+    transition: all .4s ease-in;
+  }
+
+  .collapse-header {
+    margin-top: 21px;
+    width: 100%;
+    height: 49px;
+    border: 2px solid $main-color;
+    display: flex;
+    position: relative;
+
+    .collapse-text {
+      width: 90%;
+      padding: 3px 0 0 0;
+      font-size: 26px;
+    }&:hover {
+      cursor: pointer;
+    }
+
+    .collapse-text.active{
+      color: $main-light-color;
+    }
+
+    .collapse-control {
+      font-size: 30px;
+      width: 40px;
+      text-align: center;
+      color: $main-light-color;
+      padding-left: 5px;
+      i {
+        transition: all .3s;
+        font-size: 25px;
+
+        &.active {
+          transform: rotate(45deg);
+          margin-top: 5px;
+        }
+      }
+    }
+
+    &.active{
+      border-bottom: none;
+    }
+  }
+
+  .collapse-content{
+    border: 2px solid $main-color;
+
+    &.active{
+      border-top: none;
+    }
+  }
+}
+
+.link{
+  font-size: 17px;
+  position: absolute;
+  right: 18px;
+  top: 3px;
+  color: #afafaf;
+  line-height: 40px;
+}
+
+

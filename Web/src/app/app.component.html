@@ -1,0 +1,47 @@
+
+<header>
+    <div class="header-logo">
+        <a routerLink="/">
+            <img src="../assets/images/logo.png"/>
+        </a>
+    </div>
+
+    <div class="container-fluid" style="padding-left: 25vw;">
+
+      <div class="row">
+        <div class="col">
+          <div class="contacts">
+            <div class="contact-info">
+              <i class="fa fa-phone"></i> <a href="tel:+375-29-111-11-11">+375-29-111-11-11</a>
+              <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+              <i class="fa fa-skype"></i> <a href="skype:pavel.pontus?chat">pavel.pontus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+          <nav id="nav-menu-container">
+            <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+              <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Главная</a></li>
+              <li *ngFor="let link of navigationLinkList">
+                <a routerLink="{{link.value}}" routerLinkActive="active">{{link.key}}</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+</header>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="container-fluid">
+  © 2018 Понтус Павел Михайлович
+  <span>pavel_pontus@tut.by</span>
+</footer>

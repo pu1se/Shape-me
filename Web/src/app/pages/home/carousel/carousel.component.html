@@ -1,0 +1,14 @@
+<ngx-carousel [inputs]="carouselConfig">
+  <ngx-tile NgxCarouselItem *ngFor="let item of list; let i = index" >
+    <div class="content" [ngStyle]="{background: 'url('+item.imageUrl+')'}">
+      <h4>{{item.name}}</h4>
+    </div>
+  </ngx-tile>
+
+  <button NgxCarouselPrev class='leftRs'>
+    <i class="fa fa-angle-left" aria-hidden="true"></i>
+  </button>
+  <button NgxCarouselNext class='rightRs'>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </button>
+</ngx-carousel>
