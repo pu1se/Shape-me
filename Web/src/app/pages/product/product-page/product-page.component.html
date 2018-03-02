@@ -9,8 +9,10 @@
 
     <div *ngFor="let item of this.productItem.productList; let i = index">
       <div class="col-md-4" >
-        <img src="{{item.imageUrl}}" style="width:250px;" />
-        <h5>{{item.name}}</h5>
+        <div class="content" [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center center', 'background-size': 'cover'}">
+          <h4>{{item.name}}</h4>
+          <p>{{item.price}} р</p>
+        </div>
       </div>
     </div>
 

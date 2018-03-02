@@ -17,6 +17,7 @@ export class ProductPageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
       this.productItem = this.service.getItemByType(params['type']);
+      window.scrollTo(0, 0);
     });
   }
 

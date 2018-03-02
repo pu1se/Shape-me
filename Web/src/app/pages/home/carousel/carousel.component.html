@@ -1,7 +1,8 @@
 <ngx-carousel [inputs]="carouselConfig">
   <ngx-tile NgxCarouselItem *ngFor="let item of list; let i = index" >
-    <div class="content" [ngStyle]="{background: 'url('+item.imageUrl+')'}">
+    <div class="content" [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center center', 'background-size': 'cover'}">
       <h4>{{item.name}}</h4>
+      <p>{{item.price}} р</p>
     </div>
   </ngx-tile>
 

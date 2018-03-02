@@ -1,6 +1,25 @@
 $main-light-color: #26a680;
+
 $main-color: #444;
+
 @mixin main-light-text-shadow{
     text-shadow: 0px 0px 45px #59d9b3;
 }
+
 $main-light-background-color: #d5f6ec;
+
+@mixin main-light-font-bold{
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $main-light-color;
+  text-shadow: 0px 0px 15px #fff;
+  font-weight: 800;
+}
+
+@mixin main-dark-font-bold{
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $main-color;
+  text-shadow: 0px 0px 15px #fff;
+  font-weight: 800;
+}
