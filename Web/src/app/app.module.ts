@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home/home-page/home-page.component';
-import { SlidingAccordionComponent } from './pages/home/sliding-accordion/sliding-accordion.component';
+import { SlidingAccordionComponent } from './shared/sliding-accordion/sliding-accordion.component';
 import { AboutUsPageComponent } from './pages/about-us/about-us-page/about-us-page.component';
 import {AppRoutingModule} from "./modules/routing.module";
 import { PageNotFoundComponent } from './pages/common/page-not-found/page-not-found.component';
