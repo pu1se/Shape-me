@@ -13,6 +13,7 @@ import { ProductPageComponent } from './pages/product/product-page/product-page.
 import { CarouselComponent } from './pages/home/carousel/carousel.component';
 import {NgxCarouselModule} from "ngx-carousel";
 import { AdvantagesPanelComponent } from './pages/home/advantages-panel/advantages-panel.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdvantagesPanelComponent } from './pages/home/advantages-panel/advantag
     BrowserModule,
     AppRoutingModule,
     BootstrapModule,
-    NgxCarouselModule
+    NgxCarouselModule,
+    CarouselModule.forRoot()
   ],
   providers: [
     ProductGroupService

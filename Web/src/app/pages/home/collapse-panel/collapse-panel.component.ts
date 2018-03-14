@@ -16,9 +16,7 @@ export class CollapsePanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    /*$('.collapse-container').on('show.bs.dropdown', function() {
-      $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-    });*/
+
   }
 
 }

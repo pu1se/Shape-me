@@ -1,46 +1,74 @@
-<div class="container">
+<div class="container-fluid">
 
   <div class="row">
-    <div class="col">
-      <h2>Что мы делаем</h2>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <app-sliding-accordion [list]="this.groupList"></app-sliding-accordion>
+    <div class="col" style="margin: 0;padding: 0;">
+      <carousel [interval]="8000">
+        <slide>
+          <img src="https://img1.liveinternet.ru/images/attach/c/6/92/919/92919523_large_d2be8d7272cf.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>First slide label</h2>
+          </div>
+        </slide>
+        <slide>
+          <img src="https://img1.liveinternet.ru/images/attach/c/10/110/218/110218457_large_R_RRRRRR_2.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Second slide label</h2>
+          </div>
+        </slide>
+        <slide>
+          <img src="https://img1.liveinternet.ru/images/attach/c/6/89/863/89863303_large_000070.jpg">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Third slide label</h2>
+          </div>
+        </slide>
+      </carousel>
     </div>
   </div>
 
 </div>
 
-<br/>
 
-<div class="container-fluid background">
-<br/>
+<div class="container">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <app-advantages-panel></app-advantages-panel>
+  <br/>
+  <br/>
   <br/>
 </div>
 
 <br/>
 <br/>
 
-<div class="container">
+<div class="container ">
   <div class="row">
     <div class="col">
+      <br/>
       <h2>Наши топовые товары</h2>
     </div>
   </div>
-<app-collapse-panel *ngFor="let groupItem of this.groupList" [item]="groupItem"></app-collapse-panel>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <app-collapse-panel *ngFor="let groupItem of this.groupList" [item]="groupItem"></app-collapse-panel>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
 </div>
 
-<br/>
-<br/>
-<br/>
 
-<div class="container-fluid background">
+<div class="container">
   <div class="row">
     <div class="col">
+      <br/>
       <h2>О нас</h2>
     </div>
   </div>
@@ -58,6 +86,7 @@
         Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
         Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla
         Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla </p>
+      <br/>
     </div>
   </div>
 </div>
