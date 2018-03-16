@@ -9,10 +9,7 @@
 
     <div *ngFor="let item of this.productItem.productList; let i = index">
       <div class="col-md-4" >
-        <div class="content" [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center center', 'background-size': 'cover'}">
-          <h4>{{item.name}}</h4>
-          <p>{{item.price}} р</p>
-        </div>
+        <app-product-item [item]="item" (onChange)="this.onChange()"></app-product-item>
       </div>
     </div>
 

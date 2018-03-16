@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductGroupModel} from "../../../models/product-group.model";
-import {ProductItemModel} from "../../../models/product-item.model";
-import {ProductGroupService} from "../../../services/product-group.service";
+import {ProductGroupModel} from "../../models/product-group.model";
+import {ProductItemModel} from "../../models/product-item.model";
+import {ProductGroupService} from "../../services/product-group.service";
 import {NgxCarousel, NgxCarouselStore} from "ngx-carousel";
 
 @Component({

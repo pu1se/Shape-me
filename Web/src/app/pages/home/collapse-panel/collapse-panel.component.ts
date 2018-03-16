@@ -9,7 +9,7 @@ declare var $: any;
 })
 export class CollapsePanelComponent implements OnInit {
 
-  isCollapsed: boolean = true;
+  isCollapsed = true;
 
   @Input() item: ProductGroupModel;
 

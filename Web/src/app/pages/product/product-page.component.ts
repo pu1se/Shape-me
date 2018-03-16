@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductGroupModel} from "../../../models/product-group.model";
-import {ProductGroupService} from "../../../services/product-group.service";
+import {ProductGroupModel} from "../../models/product-group.model";
+import {ProductGroupService} from "../../services/product-group.service";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
@@ -19,6 +19,9 @@ export class ProductPageComponent implements OnInit {
       this.productItem = this.service.getItemByType(params['type']);
       window.scrollTo(0, 0);
     });
+  }
+
+  onChange(){
   }
 
 }
