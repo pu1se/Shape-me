@@ -12,6 +12,10 @@ a {
     transition: 0.5s;
 }
 
+i{
+  color: #111;
+}
+
 a:hover, a:active, a:focus {
     color: $main-light-color;
     outline: none;

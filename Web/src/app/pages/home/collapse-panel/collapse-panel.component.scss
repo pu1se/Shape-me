@@ -7,7 +7,7 @@
 
   .collapse-content {
     padding-top: 15px;
-    transition: all .4s ease-in;
+    transition: all .6s ease-in;
   }
 
   .collapse-header {
@@ -35,11 +35,11 @@
       color: $main-light-color;
       padding-left: 5px;
       i {
-        transition: all .3s;
+        transition: all .6s ease-out;
         font-size: 25px;
 
         &.active {
-          transform: rotate(45deg);
+          transform: rotate(135deg);
           margin-top: 5px;
         }
       }
@@ -57,7 +57,7 @@
     margin: 0;
     padding: 0;
 
-    transition: height 1s ease-in-out;
+    transition: height .6s ease-in-out;
 
     &.active{
       border-top: none;

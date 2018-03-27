@@ -3,6 +3,7 @@ import {ProductGroupModel} from "../../models/product-group.model";
 import {ProductItemModel} from "../../models/product-item.model";
 import {ProductGroupService} from "../../services/product-group.service";
 import {NgxCarousel, NgxCarouselStore} from "ngx-carousel";
+declare var $: any;
 
 @Component({
   selector: 'app-home-page',
@@ -28,4 +29,10 @@ export class HomePageComponent implements OnInit {
     ];
   }
 
+  onArrowClick(){
+    const target = $('app-collapse-panel:first');
+    $('body,html').animate({
+      scrollTop: target.offset().top - ($(window).height() / 2 - $(window).height() / 5)
+    }, 1000);
+  }
 }

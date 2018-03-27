@@ -1,0 +1,32 @@
+@import "~assets/styles/style-variables.scss";
+
+.content {
+  background-size: cover;
+  width:250px;
+  height: 220px;
+  text-align: center;
+  margin: 20px 0;
+  // cursor: zoom-in;
+
+  transition: transform 1s;
+  transition-timing-function: ease-in-out;
+
+  &.active{
+    cursor: zoom-out;
+    transform: scale3d(2, 2, 2) perspective(800px);
+    position: relative;
+    z-index: 200;
+  }
+  &.animating{
+    z-index: 200;
+  }
+
+  h4{
+    @include main-dark-font-bold;
+    padding-top: 55%;
+    margin: 0;
+  }
+  p{
+    @include main-dark-font-bold;
+  }
+}

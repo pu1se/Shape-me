@@ -34,9 +34,10 @@
   .content {
     background-size: cover;
     overflow: hidden;
-    height: 50vh;
-    min-height: 80px;
+    height: 40vh;
+    min-height: 100px;
     max-height: 220px;
+    border-radius: 5px;
 
     h4{
       @include main-dark-font-bold;
