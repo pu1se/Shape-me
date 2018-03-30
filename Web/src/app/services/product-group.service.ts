@@ -13,10 +13,10 @@ export class ProductGroupService {
     this.groupList = [
       <ProductGroupModel>{name: 'Плитки', type: 'tile', imgUrl: 'https://img1.liveinternet.ru/images/attach/c/6/92/919/92919523_large_d2be8d7272cf.jpg',
         productList: [
-          { name: 'имя1', price: 20, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/cersanit-lati-1_enl.jpg' },
-          { name: 'имя2', price: 20, imageUrl: 'http://www.stk-rb.ru/wp-content/uploads/2017/10/1eb7efa9611ee6fb894ceec26ae25973.jpg' },
-          { name: 'имя3', price: 24, imageUrl: 'http://dtk-m.ru/wp-content/uploads/2017/09/plitka-emphasis-materia-dune-3323_6.jpg' },
-          { name: 'имя4', price: 34, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/vallelunga-lirica-2_enl.jpg' },
+          { name: 'имя1', price: 20, imageUrl: '/assets/images/main/4.jpg' },
+          { name: 'имя2', price: 20, imageUrl: '../../../assets/images/main/2.jpg' },
+          { name: 'имя3', price: 24, imageUrl: '../../../assets/images/main/3.jpg' },
+          { name: 'имя4', price: 34, imageUrl: '../../../assets/images/main/1.png' },
           { name: 'имя5', price: 245, imageUrl: 'http://keramikacity.com/images/Kyhnja/Del_Conca/CM_Cordi_di_Canepa_20x20/%D0%9F%D0%BB%D0%B8%D1%82%D0%BA%D0%B0_%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B8%D1%80._20x20_CORTI_DI_CANEPA_SIGNORIE_A.CM.jpg' },
           { name: 'имя5', price: 23, imageUrl: 'https://santehlux.by/images/cache/222b38/nastennaya_plitka_kerama_marazzi_kaleydoskop_20x20_1.jpg' },
           { name: 'имя6', price: 76, imageUrl: 'https://santehlux.by/upload/iblock/979/keramin-sierra-seriya.jpg' },

@@ -46,6 +46,7 @@ carousel .item img{
     position: relative;
     -webkit-text-fill-color: white; /* Will override color (regardless of order) */
     text-shadow: 0px 0px 40px #fff;
+    @include main-dark-font-bold;
   }
   h1:first-child,h2:first-child,h3:first-child{
     animation-name: text-animation1;
@@ -99,7 +100,7 @@ carousel .item img{
   position: absolute; bottom: 50px; color: white;
   left: 35%;
   cursor: pointer;
-  text-shadow: 15px 12px 10px #222;
+  text-shadow: 15px 12px 7px #222;
   i{
     color: white;
   }
@@ -145,4 +146,8 @@ carousel .item img{
 
 h6{
   text-align: left;
+}
+
+ul{
+  padding-left: 20px;
 }
