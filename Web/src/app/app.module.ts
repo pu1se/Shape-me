@@ -25,7 +25,7 @@ import {ProductItemComponent} from "./pages/product/product-item/product-item.co
     ProductPageComponent,
     CarouselComponent,
     AdvantagesPanelComponent,
-    ProductItemComponent
+    ProductItemComponent,
   ],
   imports: [
     BrowserModule,

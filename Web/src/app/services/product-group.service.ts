@@ -11,25 +11,24 @@ export class ProductGroupService {
   constructor() {
 
     this.groupList = [
-      <ProductGroupModel>{name: 'Плитки', type: 'tile', imgUrl: 'https://img1.liveinternet.ru/images/attach/c/6/92/919/92919523_large_d2be8d7272cf.jpg',
+      <ProductGroupModel>{name: 'Плитки', type: 'tile',
         productList: [
-          { name: 'имя1', price: 20, imageUrl: '/assets/images/main/4.jpg' },
-          { name: 'имя2', price: 20, imageUrl: '../../../assets/images/main/2.jpg' },
-          { name: 'имя3', price: 24, imageUrl: '../../../assets/images/main/3.jpg' },
-          { name: 'имя4', price: 34, imageUrl: '../../../assets/images/main/1.png' },
-          { name: 'имя5', price: 245, imageUrl: 'http://keramikacity.com/images/Kyhnja/Del_Conca/CM_Cordi_di_Canepa_20x20/%D0%9F%D0%BB%D0%B8%D1%82%D0%BA%D0%B0_%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B8%D1%80._20x20_CORTI_DI_CANEPA_SIGNORIE_A.CM.jpg' },
-          { name: 'имя5', price: 23, imageUrl: 'https://santehlux.by/images/cache/222b38/nastennaya_plitka_kerama_marazzi_kaleydoskop_20x20_1.jpg' },
-          { name: 'имя6', price: 76, imageUrl: 'https://santehlux.by/upload/iblock/979/keramin-sierra-seriya.jpg' },
-          { name: 'имя7', price: 454, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/cersanit-lati-1_enl.jpg' },
-          { name: 'имя8', price: 34, imageUrl: 'http://www.stk-rb.ru/wp-content/uploads/2017/10/1eb7efa9611ee6fb894ceec26ae25973.jpg' },
-          { name: 'имя8', price: 76, imageUrl: 'http://dtk-m.ru/wp-content/uploads/2017/09/plitka-emphasis-materia-dune-3323_6.jpg' },
-          { name: 'имя3', price: 24, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/vallelunga-lirica-2_enl.jpg' },
-          { name: 'имя4', price: 23, imageUrl: 'http://keramikacity.com/images/Kyhnja/Del_Conca/CM_Cordi_di_Canepa_20x20/%D0%9F%D0%BB%D0%B8%D1%82%D0%BA%D0%B0_%D0%B4%D0%B5%D0%BA%D0%BE%D1%80%D0%B8%D1%80._20x20_CORTI_DI_CANEPA_SIGNORIE_A.CM.jpg' },
-          { name: 'имя4', price: 201, imageUrl: 'https://santehlux.by/images/cache/222b38/nastennaya_plitka_kerama_marazzi_kaleydoskop_20x20_1.jpg' },
-          { name: 'имя3', price: 23, imageUrl: 'https://santehlux.by/upload/iblock/979/keramin-sierra-seriya.jpg' },
+          { name: 'Mankhetten 1', imageUrl: '/assets/images/tile/Mankhetten1.jpg' },
+          { name: 'Mankhetten 6', imageUrl: '/assets/images/tile/Mankhetten6.jpg', isBest: true },
+          { name: 'Pompeya 1', imageUrl: '/assets/images/tile/Pompeya1.jpg' },
+          { name: 'Pompeya 11', imageUrl: '/assets/images/tile/Pompeya11.jpg', isBest: true },
+          { name: 'Pompeya 14', imageUrl: '/assets/images/tile/Pompeya14.jpg' },
+          { name: 'Pompeya 16', imageUrl: '/assets/images/tile/Pompeya16.jpg' },
+          { name: 'Pompeya 6', imageUrl: '/assets/images/tile/Pompeya6.jpg' },
+          { name: 'Rim 1', imageUrl: '/assets/images/tile/Rim1.jpg' },
+          { name: 'Rim 6', imageUrl: '/assets/images/tile/Rim6.jpg', isBest: true },
+          { name: 'Tira 1', imageUrl: '/assets/images/tile/Tira1.jpg', isBest: true },
+          { name: 'Tira 6', imageUrl: '/assets/images/tile/Tira6.jpg' },
+          { name: 'Vizantiya 1', imageUrl: '/assets/images/tile/Vizantiya1.jpg' },
+          { name: 'Vizantiya 6', imageUrl: '/assets/images/tile/Vizantiya6.jpg', isBest: true },
         ] },
 
-      <ProductGroupModel>{name: 'Сувениры', type: 'souvenir', imgUrl: 'https://img1.liveinternet.ru/images/attach/c/10/110/218/110218457_large_R_RRRRRR_2.jpg',
+      <ProductGroupModel>{name: 'Сувениры', type: 'souvenir',
         productList: [
           { name: 'имя', price: 25, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/cersanit-lati-1_enl.jpg' },
           { name: 'имя', price: 21, imageUrl: 'http://www.stk-rb.ru/wp-content/uploads/2017/10/1eb7efa9611ee6fb894ceec26ae25973.jpg' },
@@ -47,7 +46,7 @@ export class ProductGroupService {
           { name: 'имя', price: 28, imageUrl: 'https://santehlux.by/upload/iblock/979/keramin-sierra-seriya.jpg' },
         ] },
 
-      <ProductGroupModel>{name: 'Камины', type: 'fireplace', imgUrl: 'https://img1.liveinternet.ru/images/attach/c/6/89/863/89863303_large_000070.jpg',
+      <ProductGroupModel>{name: 'Камины', type: 'fireplace',
         productList: [<ProductItemModel>
           { name: 'имя', price: 20, imageUrl: 'https://avatars.mds.yandex.net/get-pdb/38069/7740a75b-6aae-4b31-9a21-199d6893a776/s1200' },
           { name: 'имя', price: 20, imageUrl: 'https://avatars.mds.yandex.net/get-pdb/38069/7740a75b-6aae-4b31-9a21-199d6893a776/s1200' },
@@ -66,7 +65,7 @@ export class ProductGroupService {
           { name: 'имя', price: 20, imageUrl: 'https://santehlux.by/upload/iblock/979/keramin-sierra-seriya.jpg' },
         ] },
 
-      <ProductGroupModel>{name: 'Под заказ', type: 'unique', imgUrl: 'http://3.bp.blogspot.com/-cB1M4_GdhCg/Ucl3BQvhyII/AAAAAAAAz8A/nH6beKrO8DA/s1600/Stephanie_Birdsall_17.jpg',
+      <ProductGroupModel>{name: 'Под заказ', type: 'unique',
         productList: [<ProductItemModel>
           { name: 'имя', price: 20, imageUrl: 'http://www.fromthebest.ru/components/com_virtuemart/shop_image/product/5032-0199.jpg' },
           { name: 'имя', price: 20, imageUrl: 'http://profiplitka.ru/published/publicdata/PROFIPLITKA/attachments/SC/products_pictures/cersanit-lati-1_enl.jpg' },

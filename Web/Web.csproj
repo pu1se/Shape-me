@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,6 +75,29 @@
     <Content Include="README.md" />
     <Content Include="src\app\app.component.scss" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\images\fire.jpg" />
+    <Content Include="src\assets\images\handmade.jpg" />
+    <Content Include="src\assets\images\handmade.png" />
+    <Content Include="src\assets\images\handmade.svg" />
+    <Content Include="src\assets\images\logo.png" />
+    <Content Include="src\assets\images\main\1.jpg" />
+    <Content Include="src\assets\images\main\2.jpg" />
+    <Content Include="src\assets\images\main\3.jpg" />
+    <Content Include="src\assets\images\rocket1.png" />
+    <Content Include="src\assets\images\rocket2.png" />
+    <Content Include="src\assets\images\tile\Mankhetten1.jpg" />
+    <Content Include="src\assets\images\tile\Mankhetten6.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya1.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya11.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya14.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya16.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya6.jpg" />
+    <Content Include="src\assets\images\tile\Rim1.jpg" />
+    <Content Include="src\assets\images\tile\Rim6.jpg" />
+    <Content Include="src\assets\images\tile\Tira1.jpg" />
+    <Content Include="src\assets\images\tile\Tira6.jpg" />
+    <Content Include="src\assets\images\tile\Vizantiya1.jpg" />
+    <Content Include="src\assets\images\tile\Vizantiya6.jpg" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="tsconfig.json" />
@@ -81,6 +105,8 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\shape-me - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\shape-me - Web Deploy.pubxml" />
+    <Content Include="src\assets\styles\main.scss" />
+    <Content Include="src\assets\styles\style-variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
