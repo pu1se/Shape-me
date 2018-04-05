@@ -14,6 +14,8 @@ import {NgxCarouselModule} from "ngx-carousel";
 import { AdvantagesPanelComponent } from './pages/home/advantages-panel/advantages-panel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {ProductItemComponent} from "./pages/product/product-item/product-item.component";
+import { MainPanelComponent } from './pages/home/main-panel/main-panel.component';
+import { AboutUsPageComponent } from './pages/about-us/about-us-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {ProductItemComponent} from "./pages/product/product-item/product-item.co
     CarouselComponent,
     AdvantagesPanelComponent,
     ProductItemComponent,
+    MainPanelComponent,
+    AboutUsPageComponent,
   ],
   imports: [
     BrowserModule,

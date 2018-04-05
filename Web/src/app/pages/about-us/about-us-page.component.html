@@ -1,52 +1,3 @@
-<div class="container-fluid">
-
-  <app-main-panel></app-main-panel>
-
-</div>
-
-
-<div class="container-fluid">
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <app-advantages-panel></app-advantages-panel>
-  <br/>
-  <br/>
-  <br/>
-</div>
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-<div class="container ">
-  <div class="row">
-    <div class="col">
-      <br/>
-      <h2>Наши топовые товары</h2>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <app-collapse-panel *ngFor="let groupItem of this.groupList" [item]="groupItem"></app-collapse-panel>
-      </div>
-    </div>
-  </div>
-
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-</div>
-
-
 <div class="container">
   <div class="row">
     <div class="col">
@@ -75,4 +26,39 @@
       <br/>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col">
+      <br/>
+      <h2>Наши Контакты</h2>
+    </div>
+  </div>
+
+  <div class="row contacts">
+    <div class="col">
+      <br/>
+      <h4>
+        <a href="tel:+375-44-459-82-80">
+          <i class="fa fa-phone"></i>
+          <span>
+            +375-44-459-82-80
+          </span>
+        </a>
+      </h4>
+      <h4>
+        <a href="mailto:pavel_pontus@tut.by">
+          <i class="far fa-envelope"></i>
+          <span>pavel_pontus@tut.by</span>
+        </a>
+      </h4>
+      <h4>
+        <a href="skype:rhfgbdf33?chat">
+          <i class="fab fa-skype"></i>
+          <span>rhfgbdf33</span>
+        </a>
+      </h4>
+
+    </div>
+  </div>
+
 </div>

@@ -74,6 +74,16 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="src\app\app.component.scss" />
+    <Content Include="src\app\pages\about-us\about-us-page.component.html" />
+    <Content Include="src\app\pages\home\advantages-panel\advantages-panel.component.html" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.html" />
+    <Content Include="src\app\pages\home\collapse-panel\collapse-panel.component.html" />
+    <Content Include="src\app\pages\home\home-page.component.html" />
+    <Content Include="src\app\pages\home\main-panel\main-panel.component.html" />
+    <Content Include="src\app\pages\page-not-found\page-not-found.component.html" />
+    <Content Include="src\app\pages\product\product-item\product-item.component.html" />
+    <Content Include="src\app\pages\product\product-page.component.html" />
+    <Content Include="src\app\shared\sliding-accordion\sliding-accordion.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\assets\images\fire.jpg" />
     <Content Include="src\assets\images\handmade.jpg" />
@@ -85,6 +95,14 @@
     <Content Include="src\assets\images\main\3.jpg" />
     <Content Include="src\assets\images\rocket1.png" />
     <Content Include="src\assets\images\rocket2.png" />
+    <Content Include="src\assets\images\sculpture\02.jpg" />
+    <Content Include="src\assets\images\sculpture\14.jpg" />
+    <Content Include="src\assets\images\sculpture\23.jpg" />
+    <Content Include="src\assets\images\sculpture\28.jpg" />
+    <Content Include="src\assets\images\sculpture\41.jpg" />
+    <Content Include="src\assets\images\sculpture\48.jpg" />
+    <Content Include="src\assets\images\sculpture\57.jpg" />
+    <Content Include="src\assets\images\sculpture\59.jpg" />
     <Content Include="src\assets\images\tile\Mankhetten1.jpg" />
     <Content Include="src\assets\images\tile\Mankhetten6.jpg" />
     <Content Include="src\assets\images\tile\Pompeya1.jpg" />
@@ -107,6 +125,16 @@
     <None Include="Properties\PublishProfiles\shape-me - Web Deploy.pubxml" />
     <Content Include="src\assets\styles\main.scss" />
     <Content Include="src\assets\styles\style-variables.scss" />
+    <Content Include="src\app\pages\about-us\about-us-page.component.scss" />
+    <Content Include="src\app\pages\home\advantages-panel\advantages-panel.component.scss" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.scss" />
+    <Content Include="src\app\pages\home\collapse-panel\collapse-panel.component.scss" />
+    <Content Include="src\app\pages\home\home-page.component.scss" />
+    <Content Include="src\app\pages\home\main-panel\main-panel.component.scss" />
+    <Content Include="src\app\pages\page-not-found\page-not-found.component.scss" />
+    <Content Include="src\app\pages\product\product-item\product-item.component.scss" />
+    <Content Include="src\app\pages\product\product-page.component.scss" />
+    <Content Include="src\app\shared\sliding-accordion\sliding-accordion.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -129,6 +157,22 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\models\key-value.ts" />
+    <TypeScriptCompile Include="src\app\models\product-group.model.ts" />
+    <TypeScriptCompile Include="src\app\models\product-item.model.ts" />
+    <TypeScriptCompile Include="src\app\modules\bootstrap.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\about-us\about-us-page.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\advantages-panel\advantages-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\carousel\carousel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\collapse-panel\collapse-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home-page.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\main-panel\main-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\page-not-found\page-not-found.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\product\product-item\product-item.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\product\product-page.component.ts" />
+    <TypeScriptCompile Include="src\app\services\product-group.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\sliding-accordion\sliding-accordion.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
