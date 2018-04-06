@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-main-panel',
@@ -10,6 +11,13 @@ export class MainPanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onArrowClick(){
+    const target = $('app-collapse-panel:first');
+    $('body,html').animate({
+      scrollTop: target.offset().top - ($(window).height() / 2 - $(window).height() / 5)
+    }, 1000);
   }
 
 }

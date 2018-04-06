@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductGroupModel} from "../../models/product-group.model";
 import {ProductGroupService} from "../../services/product-group.service";
 import {ActivatedRoute, Params} from "@angular/router";
+declare var $: any;
 
 @Component({
   selector: 'app-product-page',
@@ -22,6 +23,7 @@ export class ProductPageComponent implements OnInit {
   }
 
   onChange(){
+    $(".active").click();
   }
 
 }

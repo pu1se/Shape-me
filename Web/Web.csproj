@@ -86,6 +86,14 @@
     <Content Include="src\app\shared\sliding-accordion\sliding-accordion.component.html" />
     <Content Include="src\assets\.gitkeep" />
     <Content Include="src\assets\images\fire.jpg" />
+    <Content Include="src\assets\images\fountain\12.jpg" />
+    <Content Include="src\assets\images\fountain\14.jpg" />
+    <Content Include="src\assets\images\fountain\19.jpg" />
+    <Content Include="src\assets\images\fountain\33.jpg" />
+    <Content Include="src\assets\images\fountain\34.jpg" />
+    <Content Include="src\assets\images\fountain\42.jpg" />
+    <Content Include="src\assets\images\fountain\47.jpg" />
+    <Content Include="src\assets\images\fountain\52.jpg" />
     <Content Include="src\assets\images\handmade.jpg" />
     <Content Include="src\assets\images\handmade.png" />
     <Content Include="src\assets\images\handmade.svg" />

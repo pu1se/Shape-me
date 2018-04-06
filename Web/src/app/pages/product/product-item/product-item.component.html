@@ -1,10 +1,9 @@
 <div class="content"
-
+    (click)="this.onClick()"
      [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center center',
                 'background-size': 'cover',
                 'z-index': this.index}"
-     [class.active]="this.isActive"
-     [class.animating]="this.animating"
+     [ngClass]="{'active': this.isActive}"
   >
   <h4>{{item.name}}</h4>
   <p *ngIf="item.price">{{item.price}} р</p>

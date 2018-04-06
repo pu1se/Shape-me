@@ -24,6 +24,20 @@ export class ProductGroupService {
           { name: '59', imageUrl: '/assets/images/sculpture/59.jpg' },
         ] },
 
+
+      <ProductGroupModel>{name: 'Фонтаны', type: 'fountain',
+        productList: [
+          { name: '12', imageUrl: '/assets/images/fountain/12.jpg' },
+          { name: '14', imageUrl: '/assets/images/fountain/14.jpg' },
+          { name: '19', imageUrl: '/assets/images/fountain/19.jpg' },
+          { name: '33', imageUrl: '/assets/images/fountain/33.jpg' },
+          { name: '34', imageUrl: '/assets/images/fountain/34.jpg' },
+          { name: '42', imageUrl: '/assets/images/fountain/42.jpg' },
+          { name: '47', imageUrl: '/assets/images/fountain/47.jpg' },
+          { name: '52', imageUrl: '/assets/images/fountain/52.jpg' },
+        ] },
+
+
       <ProductGroupModel>{name: 'Плитки', type: 'tile',
         productList: [
           { name: 'Mankhetten 1', imageUrl: '/assets/images/tile/Mankhetten1.jpg' },
