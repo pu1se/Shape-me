@@ -95,6 +95,20 @@ export class ProductGroupService {
         ] },
 
 
+      <ProductGroupModel>{name: 'Галерея', type: 'gallery',
+        productList: [
+          { name: '05', imageUrl: '/assets/images/gallery/05.jpg' },
+          { name: '06', imageUrl: '/assets/images/gallery/06.jpg' },
+          { name: '08', imageUrl: '/assets/images/gallery/08.jpg' },
+          { name: '09', imageUrl: '/assets/images/gallery/09.jpg' },
+          { name: '14', imageUrl: '/assets/images/gallery/14.jpg' },
+          { name: '21', imageUrl: '/assets/images/gallery/21.jpg' },
+          { name: '22', imageUrl: '/assets/images/gallery/22.jpg' },
+          { name: '24', imageUrl: '/assets/images/gallery/24.jpg' },
+          { name: '82', imageUrl: '/assets/images/gallery/82.jpg' },
+        ] },
+
+
     ];
 
     for (const item of this.groupList){

@@ -41,6 +41,7 @@
         &.active {
           transform: rotate(135deg);
           margin-top: 5px;
+          color: $main-light-color;
         }
       }
     }
