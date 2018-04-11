@@ -8,7 +8,7 @@
   <div class="row">
 
     <div *ngFor="let item of this.productItem.productList; let i = index">
-      <div class="col-md-4" [ngStyle]="{'z-index': this.productItem.productList.length-i}" >
+      <div class="col-md-4" >
         <app-product-item [item]="item" [index]="this.productItem.productList.length-i" (onChange)="this.onChange()"></app-product-item>
       </div>
     </div>
