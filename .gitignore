@@ -5,10 +5,10 @@
 /.idea
 /.vs
 /Web/Properties
-/Web/obj
+obj/
 /Web/node_modules
 /Web/e2e
 /Web/dist
-/Web/bin
+bin/
 /Web/.idea
 /packages
