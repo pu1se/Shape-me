@@ -8,7 +8,7 @@
 obj/
 /Web/node_modules
 /Web/e2e
-/Web/dist
+/Web/dist/
 bin/
 /Web/.idea
 /packages
