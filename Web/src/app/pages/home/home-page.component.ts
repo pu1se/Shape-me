@@ -3,6 +3,7 @@ import {ProductGroupModel} from "../../models/product-group.model";
 import {ProductItemModel} from "../../models/product-item.model";
 import {ProductGroupService} from "../../services/product-group.service";
 import {NgxCarousel, NgxCarouselStore} from "ngx-carousel";
+import {Title, Meta} from "@angular/platform-browser";
 declare var $: any;
 
 @Component({
@@ -13,26 +14,22 @@ declare var $: any;
 export class HomePageComponent implements OnInit {
 
   groupList: ProductGroupModel[];
-  introductionList: any[];
 
-  constructor(private productGroupService: ProductGroupService) { }
+  constructor(private productGroupService: ProductGroupService,
+              private title: Title,
+              private meta: Meta
+
+  ) {
+    title.setTitle('Bonn Ceramic | Производство изделий из керамики');
+    meta.addTags([
+      {name: 'keyword', content: 'купить изделие из керамики в Минске, скульптуры, фонтаны, плитки, сувениры, кашпо, вазоны, горшки, керамика, декаративный фасад, керамическое изделие под заказ'},
+      {name: 'title', content: 'Изделия из керамики'},
+      {name: 'description', content: 'Bonn Ceramic изготовливает интерьерную, экстерьерную керамику, архитектурный декор, ландшафтную и садово-парковую керамику.'}
+    ]);
+  }
 
   ngOnInit() {
-
     this.groupList = this.productGroupService.getList();
-
-    this.introductionList =  [
-      {imageUrl: 'https://img1.liveinternet.ru/images/attach/c/6/92/919/92919523_large_d2be8d7272cf.jpg', text: 'hello'},
-      {imageUrl: 'https://img1.liveinternet.ru/images/attach/c/10/110/218/110218457_large_R_RRRRRR_2.jpg', text: 'hello'},
-      {imageUrl: 'https://img1.liveinternet.ru/images/attach/c/6/89/863/89863303_large_000070.jpg', text: 'hello'},
-      {imageUrl: 'http://3.bp.blogspot.com/-cB1M4_GdhCg/Ucl3BQvhyII/AAAAAAAAz8A/nH6beKrO8DA/s1600/Stephanie_Birdsall_17.jpg', text: 'hello'}
-    ];
   }
 
-  onArrowClick(){
-    const target = $('app-collapse-panel:first');
-    $('body,html').animate({
-      scrollTop: target.offset().top - ($(window).height() / 2 - $(window).height() / 5)
-    }, 1000);
-  }
 }

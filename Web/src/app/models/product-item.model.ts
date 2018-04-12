@@ -3,5 +3,6 @@ export class ProductItemModel {
       public name: string,
       public imageUrl: string,
       public price?: number,
+      public isBest: boolean = false,
     ){}
 }

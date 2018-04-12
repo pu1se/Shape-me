@@ -21,11 +21,10 @@ export class ProductItemComponent implements OnInit {
   }
 
   onClick(){
-    this.onChange.emit();
-    this.animating = true;
+    if (!this.isActive){
+      this.onChange.emit();
+    }
+
     this.isActive = !this.isActive;
-    setTimeout(()=>{
-        this.animating = false;
-    }, 1000);
   }
 }

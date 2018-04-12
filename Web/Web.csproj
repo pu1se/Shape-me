@@ -24,7 +24,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.7</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,7 +74,94 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="src\app\app.component.scss" />
+    <Content Include="src\app\pages\about-us\about-us-page.component.html" />
+    <Content Include="src\app\pages\home\advantages-panel\advantages-panel.component.html" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.html" />
+    <Content Include="src\app\pages\home\collapse-panel\collapse-panel.component.html" />
+    <Content Include="src\app\pages\home\home-page.component.html" />
+    <Content Include="src\app\pages\home\main-panel\main-panel.component.html" />
+    <Content Include="src\app\pages\page-not-found\page-not-found.component.html" />
+    <Content Include="src\app\pages\product\product-item\product-item.component.html" />
+    <Content Include="src\app\pages\product\product-page.component.html" />
+    <Content Include="src\app\shared\sliding-accordion\sliding-accordion.component.html" />
     <Content Include="src\assets\.gitkeep" />
+    <Content Include="src\assets\images\fire.jpg" />
+    <Content Include="src\assets\images\flowerpot\14.jpg" />
+    <Content Include="src\assets\images\flowerpot\18.jpg" />
+    <Content Include="src\assets\images\flowerpot\32.jpg" />
+    <Content Include="src\assets\images\flowerpot\38.jpg" />
+    <Content Include="src\assets\images\flowerpot\44.jpg" />
+    <Content Include="src\assets\images\flowerpot\49.jpg" />
+    <Content Include="src\assets\images\flowerpot\54.jpg" />
+    <Content Include="src\assets\images\fountain\12.jpg" />
+    <Content Include="src\assets\images\fountain\14.jpg" />
+    <Content Include="src\assets\images\fountain\19.jpg" />
+    <Content Include="src\assets\images\fountain\33.jpg" />
+    <Content Include="src\assets\images\fountain\34.jpg" />
+    <Content Include="src\assets\images\fountain\42.jpg" />
+    <Content Include="src\assets\images\fountain\47.jpg" />
+    <Content Include="src\assets\images\fountain\52.jpg" />
+    <Content Include="src\assets\images\gallery\05.jpg" />
+    <Content Include="src\assets\images\gallery\06.jpg" />
+    <Content Include="src\assets\images\gallery\08.jpg" />
+    <Content Include="src\assets\images\gallery\09.jpg" />
+    <Content Include="src\assets\images\gallery\14.jpg" />
+    <Content Include="src\assets\images\gallery\21.jpg" />
+    <Content Include="src\assets\images\gallery\22.jpg" />
+    <Content Include="src\assets\images\gallery\24.jpg" />
+    <Content Include="src\assets\images\gallery\82.jpg" />
+    <Content Include="src\assets\images\handmade.jpg" />
+    <Content Include="src\assets\images\handmade.png" />
+    <Content Include="src\assets\images\handmade.svg" />
+    <Content Include="src\assets\images\logo.png" />
+    <Content Include="src\assets\images\main\1.jpg" />
+    <Content Include="src\assets\images\main\2.jpg" />
+    <Content Include="src\assets\images\main\3.jpg" />
+    <Content Include="src\assets\images\rocket1.png" />
+    <Content Include="src\assets\images\rocket2.png" />
+    <Content Include="src\assets\images\sculpture\02.jpg" />
+    <Content Include="src\assets\images\sculpture\14.jpg" />
+    <Content Include="src\assets\images\sculpture\23.jpg" />
+    <Content Include="src\assets\images\sculpture\28.jpg" />
+    <Content Include="src\assets\images\sculpture\41.jpg" />
+    <Content Include="src\assets\images\sculpture\48.jpg" />
+    <Content Include="src\assets\images\sculpture\57.jpg" />
+    <Content Include="src\assets\images\sculpture\59.jpg" />
+    <Content Include="src\assets\images\souvenir\01.jpg" />
+    <Content Include="src\assets\images\souvenir\04.jpg" />
+    <Content Include="src\assets\images\souvenir\06.jpg" />
+    <Content Include="src\assets\images\souvenir\07.jpg" />
+    <Content Include="src\assets\images\souvenir\08.jpg" />
+    <Content Include="src\assets\images\souvenir\09.jpg" />
+    <Content Include="src\assets\images\souvenir\14.jpg" />
+    <Content Include="src\assets\images\souvenir\15.jpg" />
+    <Content Include="src\assets\images\souvenir\18.jpg" />
+    <Content Include="src\assets\images\souvenir\19.jpg" />
+    <Content Include="src\assets\images\souvenir\22.jpg" />
+    <Content Include="src\assets\images\souvenir\25.jpg" />
+    <Content Include="src\assets\images\souvenir\33.jpg" />
+    <Content Include="src\assets\images\souvenir\36.jpg" />
+    <Content Include="src\assets\images\souvenir\37.jpg" />
+    <Content Include="src\assets\images\souvenir\38.jpg" />
+    <Content Include="src\assets\images\souvenir\41.jpg" />
+    <Content Include="src\assets\images\souvenir\46.jpg" />
+    <Content Include="src\assets\images\souvenir\50.jpg" />
+    <Content Include="src\assets\images\souvenir\51.jpg" />
+    <Content Include="src\assets\images\souvenir\52.jpg" />
+    <Content Include="src\assets\images\souvenir\54.jpg" />
+    <Content Include="src\assets\images\tile\Mankhetten1.jpg" />
+    <Content Include="src\assets\images\tile\Mankhetten6.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya1.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya11.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya14.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya16.jpg" />
+    <Content Include="src\assets\images\tile\Pompeya6.jpg" />
+    <Content Include="src\assets\images\tile\Rim1.jpg" />
+    <Content Include="src\assets\images\tile\Rim6.jpg" />
+    <Content Include="src\assets\images\tile\Tira1.jpg" />
+    <Content Include="src\assets\images\tile\Tira6.jpg" />
+    <Content Include="src\assets\images\tile\Vizantiya1.jpg" />
+    <Content Include="src\assets\images\tile\Vizantiya6.jpg" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="tsconfig.json" />
@@ -81,6 +169,18 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\shape-me - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\shape-me - Web Deploy.pubxml" />
+    <Content Include="src\assets\styles\main.scss" />
+    <Content Include="src\assets\styles\style-variables.scss" />
+    <Content Include="src\app\pages\about-us\about-us-page.component.scss" />
+    <Content Include="src\app\pages\home\advantages-panel\advantages-panel.component.scss" />
+    <Content Include="src\app\pages\home\carousel\carousel.component.scss" />
+    <Content Include="src\app\pages\home\collapse-panel\collapse-panel.component.scss" />
+    <Content Include="src\app\pages\home\home-page.component.scss" />
+    <Content Include="src\app\pages\home\main-panel\main-panel.component.scss" />
+    <Content Include="src\app\pages\page-not-found\page-not-found.component.scss" />
+    <Content Include="src\app\pages\product\product-item\product-item.component.scss" />
+    <Content Include="src\app\pages\product\product-page.component.scss" />
+    <Content Include="src\app\shared\sliding-accordion\sliding-accordion.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,6 +203,22 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\models\key-value.ts" />
+    <TypeScriptCompile Include="src\app\models\product-group.model.ts" />
+    <TypeScriptCompile Include="src\app\models\product-item.model.ts" />
+    <TypeScriptCompile Include="src\app\modules\bootstrap.module.ts" />
+    <TypeScriptCompile Include="src\app\modules\routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\about-us\about-us-page.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\advantages-panel\advantages-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\carousel\carousel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\collapse-panel\collapse-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\home-page.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\home\main-panel\main-panel.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\page-not-found\page-not-found.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\product\product-item\product-item.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\product\product-page.component.ts" />
+    <TypeScriptCompile Include="src\app\services\product-group.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\sliding-accordion\sliding-accordion.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

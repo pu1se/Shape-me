@@ -3,10 +3,12 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomePageComponent} from "../pages/home/home-page.component";
 import {ProductPageComponent} from "../pages/product/product-page.component";
 import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component';
+import {AboutUsPageComponent} from "../pages/about-us/about-us-page.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'product/:type', component: ProductPageComponent },
+    { path: 'about-us', component: AboutUsPageComponent },
     { path: '**', component: PageNotFoundComponent }
 ];
 

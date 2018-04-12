@@ -12,9 +12,14 @@
         <div class="col">
           <div class="contacts">
             <div class="contact-info">
-              <i class="fa fa-phone"></i> <a href="tel:+375-44-459-82-80">+375-44-459-82-80</a>
-              <i class="far fa-envelope"></i> <a href="mailto:pavel_pontus@tut.by">pavel_pontus@tut.by</a>
-              <i class="fab fa-skype"></i> <a href="skype:rhfgbdf33?chat">rhfgbdf33</a>
+              <a href="tel:+375-44-459-82-80">
+                <i class="fa fa-phone"></i>
+                +375-44-459-82-80
+              </a>
+              <a href="mailto:bonn.ceramic@mail.ru">
+                <i class="far fa-envelope"></i>
+                bonn.ceramic@mail.ru
+              </a>
             </div>
           </div>
         </div>
@@ -29,6 +34,7 @@
               <li *ngFor="let link of navigationLinkList">
                 <a routerLink="{{link.value}}" routerLinkActive="active">{{link.key}}</a>
               </li>
+              <li><a routerLink="/about-us">О нас</a></li>
             </ul>
           </nav>
         </div>
