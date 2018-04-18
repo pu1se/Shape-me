@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web;
+using DAL;
+using DAL.Entities;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using ServicesApi.Models;
 
-namespace ServicesApi.Providers
+namespace ServicesApi
 {
-    public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
+    public class OAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
-
-        public ApplicationOAuthProvider(string publicClientId)
+        public OAuthProvider(string publicClientId)
         {
             if (publicClientId == null)
             {
@@ -27,27 +27,43 @@ namespace ServicesApi.Providers
             _publicClientId = publicClientId;
         }
 
-        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            var userManager = context.OwinContext.GetUserManager<UserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            var user = userManager.GetUser(context.UserName, context.Password);
 
             if (user == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
-                return;
+            }
+            else
+            {
+                var oAuthIdentity = CreateClaimsIdentity(user, Startup.OAuthOptions.AuthenticationType);
+                context.Validated(new AuthenticationTicket(oAuthIdentity, CreateProperties(user)));
+                context.Request.Context.Authentication.SignIn(oAuthIdentity);
             }
 
-            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
-               OAuthDefaults.AuthenticationType);
-            ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
-                CookieAuthenticationDefaults.AuthenticationType);
+            return Task.FromResult<object>(null);
+        }
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
-            context.Validated(ticket);
-            context.Request.Context.Authentication.SignIn(cookiesIdentity);
+        public virtual ClaimsIdentity CreateClaimsIdentity(UserEntity user, string authenticationType)
+        {
+            var identity = new ClaimsIdentity(authenticationType);
+            identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()));
+            identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+            identity.AddClaim(new Claim(ClaimTypes.Name, user.Email));
+
+            return identity;
+        }
+
+        public static AuthenticationProperties CreateProperties(UserEntity user)
+        {
+            IDictionary<string, string> data = new Dictionary<string, string>
+            {
+                { "userName", user.Email }
+            };
+            return new AuthenticationProperties(data);
         }
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
@@ -86,13 +102,5 @@ namespace ServicesApi.Providers
             return Task.FromResult<object>(null);
         }
 
-        public static AuthenticationProperties CreateProperties(string userName)
-        {
-            IDictionary<string, string> data = new Dictionary<string, string>
-            {
-                { "userName", userName }
-            };
-            return new AuthenticationProperties(data);
-        }
     }
 }

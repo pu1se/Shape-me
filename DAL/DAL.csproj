@@ -68,8 +68,9 @@
     <Compile Include="Repositories\ProductItemRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\PasswordUtil.cs" />
-    <Compile Include="Utils\UserManager.cs" />
+    <Compile Include="Services\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
