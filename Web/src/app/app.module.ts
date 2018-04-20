@@ -16,6 +16,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {ProductItemComponent} from "./pages/product/product-item/product-item.component";
 import { MainPanelComponent } from './pages/home/main-panel/main-panel.component';
 import { AboutUsPageComponent } from './pages/about-us/about-us-page.component';
+import { AdminPageComponent } from './pages/admin/admin-page.component';
+import { LoginComponent } from './pages/admin/login/login.component';
+import { EditInfoComponent } from './pages/admin/edit-info/edit-info.component';
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -30,6 +34,9 @@ import { AboutUsPageComponent } from './pages/about-us/about-us-page.component';
     ProductItemComponent,
     MainPanelComponent,
     AboutUsPageComponent,
+    AdminPageComponent,
+    LoginComponent,
+    EditInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import { AboutUsPageComponent } from './pages/about-us/about-us-page.component';
     CarouselModule.forRoot()
   ],
   providers: [
-    ProductGroupService
+    ProductGroupService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

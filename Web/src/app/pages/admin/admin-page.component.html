@@ -1,0 +1,7 @@
+<div class="container">
+
+  <app-login *ngIf="this.auth.isAuthenticated() == false"></app-login>
+
+  <app-edit-info *ngIf="this.auth.isAuthenticated()"></app-edit-info>
+
+</div>
