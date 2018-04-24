@@ -32,13 +32,32 @@
 
   $.ajax({
     type: 'POST',
-    url: '/Token',
+    url: '/api/token',
     data: loginData
   }).done(function (data) {
     console.log(data.userName);
     console.log(data.access_token);
     console.log(JSON.stringify(data));
     // Cache the access token in session storage.
-    sessionStorage.setItem(tokenKey, data.access_token);
-  }).fail(function(err){console.log(JSON.stringify(err))});
+    sessionStorage.setItem('token', data.access_token);
+
+
+    var token = sessionStorage.getItem('token');
+    var headers = {};
+    if (token) {
+      headers.Authorization = 'Bearer ' + token;
+    }
+
+    $.ajax({
+      type: 'GET',
+      url: 'api/products',
+      headers: headers
+    }).done(function (data) {
+      console.log(JSON.stringify(data));
+    }).fail(function (err) { console.log(JSON.stringify(err)) });
+
+    }).fail(function (err) { console.log(JSON.stringify(err)) });
+
+
+  
 </script>

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgxCarousel, NgxCarouselStore} from "ngx-carousel";
-import {ProductItemModel} from "../../../models/product-item.model";
+import {ProductItemModel} from "../../../_core/models/product-item.model";
 
 @Component({
   selector: 'app-carousel',

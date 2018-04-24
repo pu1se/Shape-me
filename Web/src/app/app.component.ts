@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {ProductGroupService} from "./services/product-group.service";
-import {KeyValue} from "./models/key-value";
+import {ProductGroupService} from "./_core/services/product-group.service";
+import {KeyValue} from "./_core/models/key-value";
 
 @Component({
   selector: 'app-root',

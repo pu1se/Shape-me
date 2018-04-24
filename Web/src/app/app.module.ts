@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { SlidingAccordionComponent } from './shared/sliding-accordion/sliding-accordion.component';
-import {AppRoutingModule} from "./modules/routing.module";
+import {AppRoutingModule} from "./routing.module";
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { CollapsePanelComponent } from './pages/home/collapse-panel/collapse-panel.component';
-import {BootstrapModule} from "./modules/bootstrap.module";
-import {ProductGroupService} from "./services/product-group.service";
+import {BootstrapModule} from "./bootstrap.module";
+import {ProductGroupService} from "./_core/services/product-group.service";
 import { ProductPageComponent } from './pages/product/product-page.component';
 import { CarouselComponent } from './pages/home/carousel/carousel.component';
 import {NgxCarouselModule} from "ngx-carousel";
@@ -19,7 +19,10 @@ import { AboutUsPageComponent } from './pages/about-us/about-us-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page.component';
 import { LoginComponent } from './pages/admin/login/login.component';
 import { EditInfoComponent } from './pages/admin/edit-info/edit-info.component';
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "./_core/services/auth.service";
+import {ApiService} from "./_core/services/api.service";
+import {HttpClientModule} from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,11 +46,15 @@ import {AuthService} from "./services/auth.service";
     AppRoutingModule,
     BootstrapModule,
     NgxCarouselModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductGroupService,
-    AuthService
+    AuthService,
+    ApiService,
   ],
   bootstrap: [AppComponent]
 })

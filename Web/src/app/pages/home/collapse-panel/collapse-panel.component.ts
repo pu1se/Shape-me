@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ProductGroupModel} from "../../../models/product-group.model";
+import {ProductGroupModel} from "../../../_core/models/product-group.model";
 declare var $: any;
 
 @Component({

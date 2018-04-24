@@ -5,17 +5,28 @@
   <br/>
   <br/>
   <br/>
-  <div class="row">
-    <input type="text" placeholder="Email" class="form-control"/>
-  </div>
-  
-  <br/>
-  <div class="row">
-    <input type="text" placeholder="Password" class="form-control"/>
-  </div>
-  <br/>
 
-  <div class="row">
-    <button style="width: 100%" class="btn">Login</button>
-  </div>
+  <form [formGroup]="this.loginForm" (ngSubmit)="this.onSubmit()" novalidate>
+    <div class="row">
+      <input type="text" placeholder="Email" class="form-control" autocomplete="true" formControlName="email"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.loginForm.controls.email.invalid">
+        <div [hidden]="!this.loginForm.controls.email.errors?.email">Email is incorrect</div>
+        <div [hidden]="!this.loginForm.controls.email.errors?.required">Email is required</div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <input type="password" placeholder="Password" autocomplete="true" class="form-control" formControlName="password"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.loginForm.controls.password.invalid">
+        <div [hidden]="!this.loginForm.controls.password.errors?.required">Password is required</div>
+      </div>
+    </div>
+    <br/>
+
+    <div class="row">
+      <button style="width: 100%" class="btn" type="submit">Login</button>
+    </div>
+  </form>
+
 </div>

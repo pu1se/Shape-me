@@ -11,6 +11,7 @@ namespace ServicesApi.Controllers
     public class ProductsController : BaseController
     {
         // GET api/values
+        [Authorize]
         public IEnumerable<ProductGroupEntity> Get()
         {
             var result = Storage.ProductGroups.GetAll();

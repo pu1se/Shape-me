@@ -1,7 +1,7 @@
 <div class="content"
     (click)="this.onClick()"
-     [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center center',
-                'background-size': 'cover'}"
+     [ngStyle]="{background: 'url('+item.imageUrl+') no-repeat center',
+                'background-size': 'contain'}"
      [ngClass]="{'active': this.isActive}"
   >
   <h4>{{item.name}}</h4>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductGroupModel} from "../../models/product-group.model";
-import {ProductGroupService} from "../../services/product-group.service";
+import {ProductGroupModel} from "../../_core/models/product-group.model";
+import {ProductGroupService} from "../../_core/services/product-group.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Title, Meta} from "@angular/platform-browser";
 declare var $: any;

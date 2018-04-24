@@ -83,7 +83,7 @@ export class ProductGroupService {
         ] },
 
 
-      <ProductGroupModel>{name: 'Горшки', type: 'flowerpot',
+      <ProductGroupModel>{name: 'Кашпо', type: 'flowerpot',
         productList: [
           { name: '14', imageUrl: '/assets/images/flowerpot/14.jpg' },
           { name: '18', imageUrl: '/assets/images/flowerpot/18.jpg' },

@@ -3,11 +3,13 @@
 .content {
   background-size: cover;
   width:250px;
-  height: 220px;
+  height: auto;
+  min-height: 320px;
   text-align: center;
   margin: 20px 0;
   cursor: zoom-in;
   transform: translateZ(0px);
+  z-index: 2;
 
   transition: transform 1s;
   transform-origin: 0 0;

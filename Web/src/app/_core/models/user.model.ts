@@ -1,7 +1,7 @@
 export class UserModel{
+  public email: string;
 
   constructor(
-    public emai: string,
   ){}
 
 }
