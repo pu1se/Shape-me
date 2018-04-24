@@ -5,6 +5,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Text;
 using DAL.Entities;
+using DAL.Migrations;
 
 namespace DAL
 {
@@ -29,11 +30,11 @@ namespace DAL
                         case EntityState.Added:
                             entity.CreatedDate = now;
                             entity.LastChangedDate = now;
-//                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
+                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
                             break;
                         case EntityState.Modified:
                             entity.LastChangedDate = now;
-//                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
+                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
                             break;
                     }
                 }

@@ -53,7 +53,7 @@ namespace ServicesApi
             var identity = new ClaimsIdentity(authenticationType);
             identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()));
             identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
-            identity.AddClaim(new Claim(ClaimTypes.Name, user.Email));
+            identity.AddClaim(new Claim(ClaimTypes.Name, user.Name));
 
             return identity;
         }
@@ -62,7 +62,7 @@ namespace ServicesApi
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", user.Email }
+                { "userName", user.Name }
             };
             return new AuthenticationProperties(data);
         }

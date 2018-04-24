@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201804141015522_Init.Designer.cs">
       <DependentUpon>201804141015522_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804241326160_AddedNameToUser.cs" />
+    <Compile Include="Migrations\201804241326160_AddedNameToUser.Designer.cs">
+      <DependentUpon>201804241326160_AddedNameToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ShapeMeDBContext.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804141015522_Init.resx">
       <DependentUpon>201804141015522_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804241326160_AddedNameToUser.resx">
+      <DependentUpon>201804241326160_AddedNameToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

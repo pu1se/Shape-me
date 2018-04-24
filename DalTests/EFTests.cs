@@ -29,6 +29,7 @@ namespace DalTests
                 var user = new UserEntity
                 {
                     Email = adminEmail,
+                    Name = "Павел П",
                     PasswordHash = PasswordUtil.GetHash("password"),
                 };
 

@@ -12,7 +12,7 @@ export class AppComponent {
 
   navigationLinkList: KeyValue[];
 
-  constructor(private productGroupService: ProductGroupService, private auth: AuthService) {
+  constructor(public productGroupService: ProductGroupService, public auth: AuthService) {
     this.navigationLinkList = productGroupService.getNavigationLinkList();
   }
 
