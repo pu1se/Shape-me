@@ -10,6 +10,8 @@ export class AuthService {
 
   private _currentUser: UserModel;
   private CONST_TOKEN_NAME = 'shape_me_token';
+  private CONST_USER_NAME = 'shape_me_username';
+  private CONST_EXPIRES = 'shape_me_expires';
 
   constructor(private api: ApiService, private router: Router){}
 
@@ -20,68 +22,59 @@ export class AuthService {
       .set('grant_type', 'password')
       .set('password', password);
 
-    this.api.post('token', body.toString()).subscribe(
-      data => {
+    try{
+      this.api.post('token', body.toString()).subscribe(
+        data => {
 
-        console.log(data.userName);
-        console.log(data.access_token);
-        console.log(JSON.stringify(data));
-        localStorage.setItem(this.CONST_TOKEN_NAME, data.access_token);
-        this.router.navigate(['/']);
+          localStorage.setItem(this.CONST_TOKEN_NAME, data.access_token);
+          localStorage.setItem(this.CONST_USER_NAME, data.userName);
+          localStorage.setItem(this.CONST_EXPIRES, data['.expires']);
+          this.router.navigate(['/']);
 
-    });
+        });
+    }catch (ex){
+      console.log(ex);
+    }
 
-    /*var loginData = {
-      grant_type: 'password',
-      username: email,
-      password: password
-    };
 
-    $.ajax({
-      type: 'POST',
-      url: this.api.CONST_BASE_URL+'token',
-      data: loginData
-    }).done(function (data) {
-      console.log(data.userName);
-      console.log(data.access_token);
-      console.log(JSON.stringify(data));
-      window.localStorage.setItem(this.CONST_TOKEN_NAME, data.token);
-    }).fail();*/
   }
 
   logout(){
+
+    console.log('logout');
     this._currentUser = null;
-    window.localStorage.removeItem(this.CONST_TOKEN_NAME);
+    localStorage.removeItem(this.CONST_TOKEN_NAME);
+    localStorage.removeItem(this.CONST_USER_NAME);
+    localStorage.removeItem(this.CONST_EXPIRES);
+
   }
 
   get isAuthenticated(): boolean {
-    return this.currentUser === true;
+
+    return this.currentUser !== null;
+
   }
 
-  get currentUser(): UserModel | boolean{
+  get currentUser(): UserModel{
+
     if (this._currentUser){
       return this._currentUser;
     }
 
-    const token: string = window.localStorage.getItem(this.CONST_TOKEN_NAME);
-    if (!token){
-      return false;
+    if (!localStorage.getItem(this.CONST_EXPIRES)){
+      return null;
     }
 
-    let decodedToken: object = {};
-    try {
-      decodedToken = jwt(token);
-    } catch(e) {
-      console.log(e);
-      return false;
-    }
+    const expiresDate = new Date(localStorage.getItem(this.CONST_EXPIRES));
 
-    if (decodedToken['exp'] < Math.trunc(new Date().getTime() / 1000)) {
-      return false;
+    console.log(expiresDate)
+    if (expiresDate < new Date()) {
+      this.logout();
+      return null;
     }
 
     this._currentUser = new UserModel();
-    this._currentUser.email = decodedToken['sub'];
+    this._currentUser.email = localStorage.getItem(this.CONST_USER_NAME);
 
   }
 }

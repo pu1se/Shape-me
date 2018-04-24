@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ProductGroupService} from "./_core/services/product-group.service";
 import {KeyValue} from "./_core/models/key-value";
+import {AuthService} from "./_core/services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,12 @@ export class AppComponent {
 
   navigationLinkList: KeyValue[];
 
-  constructor(private productGroupService: ProductGroupService) {
+  constructor(private productGroupService: ProductGroupService, private auth: AuthService) {
     this.navigationLinkList = productGroupService.getNavigationLinkList();
   }
 
+
+  onLogOutClick(){
+    this.auth.logout();
+  }
 }

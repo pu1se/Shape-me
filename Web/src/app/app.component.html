@@ -24,6 +24,15 @@
                 <i class="far fa-envelope delimeter"></i>
                 bonn.ceramic@mail.ru
               </a>
+              <a routerLink="/admin" *ngIf="this.auth.isAuthenticated">
+                <i class="fas fa-user delimeter"></i>
+                admin
+              </a>
+              <a (click)="this.onLogOutClick()" *ngIf="this.auth.isAuthenticated">
+                <i class="fas fa-sign-out-alt delimeter"></i>
+                выход
+              </a>
+
             </div>
           </div>
         </div>

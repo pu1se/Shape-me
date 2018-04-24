@@ -29,6 +29,7 @@ namespace ServicesApi
 
         public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            context.Response.Headers.Add("Access-Control-Allow-Origin", new[]{ "*" });
             var userManager = context.OwinContext.GetUserManager<UserManager>();
 
             var user = userManager.GetUser(context.UserName, context.Password);
