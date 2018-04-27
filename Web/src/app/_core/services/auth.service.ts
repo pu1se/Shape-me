@@ -9,11 +9,12 @@ import {HttpClient, HttpParams,HttpHeaders} from '@angular/common/http';
 export class AuthService {
 
   private _currentUser: UserModel;
+  public CONST_BASE_URL = 'http://localhost:63866/api/';
   private CONST_TOKEN_NAME = 'shape_me_token';
   private CONST_USER_NAME = 'shape_me_username';
   private CONST_EXPIRES = 'shape_me_expires';
 
-  constructor(private api: ApiService, private router: Router){}
+  constructor(private http: HttpClient, private router: Router){}
 
   login(email: string, password: string){
 
@@ -23,12 +24,12 @@ export class AuthService {
       .set('password', password);
 
     try{
-      this.api.post('token', body.toString()).subscribe(
-        data => {
+      this.http.post(this.CONST_BASE_URL+'token', body.toString()).subscribe(
+        response => {
 
-          localStorage.setItem(this.CONST_TOKEN_NAME, data.access_token);
-          localStorage.setItem(this.CONST_USER_NAME, data.userName);
-          localStorage.setItem(this.CONST_EXPIRES, data['.expires']);
+          localStorage.setItem(this.CONST_TOKEN_NAME, response["access_token"]);
+          localStorage.setItem(this.CONST_USER_NAME, response['userName']);
+          localStorage.setItem(this.CONST_EXPIRES, response['.expires']);
           this.router.navigate(['/']);
 
         });
@@ -41,12 +42,28 @@ export class AuthService {
 
   logout(){
 
-    console.log('logout');
+    let headers = new HttpHeaders();
+
+    headers = headers
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('Access-Control-Allow-Origin', '*')
+      .set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+
+    if (this.isAuthenticated) {
+      let token = this.currentUserToken;
+      headers = headers.set('Authorization', 'Bearer ' + token);
+    }
+
+    this.http.post(this.CONST_BASE_URL+'Account/Logout',{}, {headers: headers});
+
     this._currentUser = null;
     localStorage.removeItem(this.CONST_TOKEN_NAME);
     localStorage.removeItem(this.CONST_USER_NAME);
     localStorage.removeItem(this.CONST_EXPIRES);
 
+    this.router.navigate(['/']);
   }
 
   get isAuthenticated(): boolean {
@@ -76,5 +93,9 @@ export class AuthService {
     this._currentUser = new UserModel();
     this._currentUser.email = localStorage.getItem(this.CONST_USER_NAME);
 
+  }
+
+  get currentUserToken(): string {
+    return localStorage.getItem(this.CONST_TOKEN_NAME);
   }
 }

@@ -12,5 +12,12 @@ namespace DAL
         {
             return string.IsNullOrEmpty(str);
         }
+
+        public static string ToHtmlString(this string st)
+        {
+            if (st.IsNullOrEmpty())
+                return st;
+            return st.Replace(Environment.NewLine, "<br/>").Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
     }
 }

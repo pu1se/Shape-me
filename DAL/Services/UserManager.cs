@@ -12,9 +12,7 @@ namespace DAL
 {
     public class UserManager : IDisposable
     {
-        private static HttpSessionState Session => HttpContext.Current.Session;
-
-        public virtual UserEntity CurrentUser => Session["CurrentUser"] as UserEntity;
+        public virtual UserEntity CurrentUser => HttpContext.Current?.Session["CurrentUser"] as UserEntity;
 
         public UserEntity GetUser(string email, string password)
         {

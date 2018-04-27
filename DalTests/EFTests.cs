@@ -46,7 +46,7 @@ namespace DalTests
         {
             using (var storage = new Storage())
             {
-                if (storage.ProductGroups.Get(x => x.ProductType == ProductType.tile) != null)
+                if (storage.ProductGroups.Get(x => x.ProductType == "tile") != null)
                 {
                     return;
                 }
@@ -54,7 +54,7 @@ namespace DalTests
                 var tileProduct = new ProductGroupEntity
                 {
                     Name = "Плитка",
-                    ProductType = ProductType.tile,
+                    ProductType = "tile",
                     LastChangedByUserId = GetDefaultUser(storage).UserId,
                     ProductList = new List<ProductItemEntity>
                     {
@@ -78,7 +78,7 @@ namespace DalTests
 
                 storage.ProductGroups.Save(tileProduct);
 
-                var newProductGroup = storage.ProductGroups.Get(x => x.ProductType == ProductType.tile);
+                var newProductGroup = storage.ProductGroups.Get(x => x.ProductType == "tile");
                 Assert.IsTrue(newProductGroup != null);
                 Assert.IsTrue(newProductGroup.ProductGroupId > 0);
                 Assert.IsTrue(newProductGroup.ProductList != null);

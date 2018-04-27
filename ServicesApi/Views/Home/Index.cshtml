@@ -1,14 +1,16 @@
 ﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+  <h1>ASP.NET</h1>
+  <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
+  <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 <div class="row">
   <div class="col-md-4">
     <h2>Getting started</h2>
-    <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
+    <p>
+      ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
       a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-      is an ideal platform for building RESTful applications on the .NET Framework.</p>
+      is an ideal platform for building RESTful applications on the .NET Framework.
+    </p>
     <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
   </div>
   <div class="col-md-4">
@@ -23,41 +25,43 @@
   </div>
 </div>
 
-<script>
-  var loginData = {
-    grant_type: 'password',
-    username: "pavel_pontus@tut.by",
-    password: "password"
-  };
-
-  $.ajax({
-    type: 'POST',
-    url: '/api/token',
-    data: loginData
-  }).done(function (data) {
-    console.log(data.userName);
-    console.log(data.access_token);
-    console.log(JSON.stringify(data));
-    // Cache the access token in session storage.
-    sessionStorage.setItem('token', data.access_token);
-
-
-    var token = sessionStorage.getItem('token');
-    var headers = {};
-    if (token) {
-      headers.Authorization = 'Bearer ' + token;
-    }
+@*
+  <script>
+    var loginData = {
+      grant_type: 'password',
+      username: "pavel_pontus@tut.by",
+      password: "password"
+    };
 
     $.ajax({
-      type: 'GET',
-      url: 'api/products',
-      headers: headers
+      type: 'POST',
+      url: '/api/token',
+      data: loginData
     }).done(function (data) {
+      console.log(data.userName);
+      console.log(data.access_token);
       console.log(JSON.stringify(data));
-    }).fail(function (err) { console.log(JSON.stringify(err)) });
+      // Cache the access token in session storage.
+      sessionStorage.setItem('token', data.access_token);
 
-    }).fail(function (err) { console.log(JSON.stringify(err)) });
+
+      var token = sessionStorage.getItem('token');
+      var headers = {};
+      if (token) {
+        headers.Authorization = 'Bearer ' + token;
+      }
+
+      $.ajax({
+        type: 'GET',
+        url: 'api/products',
+        headers: headers
+      }).done(function (data) {
+        console.log(JSON.stringify(data));
+      }).fail(function (err) { console.log(JSON.stringify(err)) });
+
+      }).fail(function (err) { console.log(JSON.stringify(err)) });
 
 
-  
-</script>
+
+  </script>
+*@

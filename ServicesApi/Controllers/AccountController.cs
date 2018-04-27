@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using DAL.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -45,6 +46,17 @@ namespace ServicesApi.Controllers
             return Ok();
         }
 
-        
+        [Route("ChangeAccountInfo")]
+        public IHttpActionResult ChangeAccountInfo(UserEntity model)
+        {
+            var currentUser = Storage.Users.GetById(CurrentUser.UserId);
+
+            currentUser.Name = model.Name;
+            currentUser.Email = model.Email;
+
+            Storage.Users.Save(currentUser);
+
+            return Ok();
+        }
     }
 }

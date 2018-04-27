@@ -8,35 +8,39 @@ using DAL.Entities;
 
 namespace ServicesApi.Controllers
 {
+    [Authorize]
     public class ProductsController : BaseController
     {
-        // GET api/values
-        [Authorize]
         public IEnumerable<ProductGroupEntity> Get()
         {
             var result = Storage.ProductGroups.GetAll();
             return result;
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        public ProductGroupEntity Get(int id)
         {
-            return "value";
+            return Storage.ProductGroups.GetById(id);
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
+        [Route("Add")]
+        public IHttpActionResult Add(int id, [FromBody]ProductGroupEntity value)
         {
+            Storage.ProductGroups.Save(value);
+            return Ok();
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        [Route("Edit")]
+        public IHttpActionResult Edit([FromBody]ProductGroupEntity value)
         {
+            Storage.ProductGroups.Save(value);
+            return Ok();
         }
 
-        // DELETE api/values/5
-        public void Delete(int id)
+        [Route("Delete")]
+        public IHttpActionResult Delete(int id)
         {
+            Storage.ProductGroups.Delete(id);
+            return Ok();
         }
     }
 }

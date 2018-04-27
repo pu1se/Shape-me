@@ -4,7 +4,7 @@ export class ProductGroupModel {
 
   name: string;
   link: string;
-  type: string;
+  productType: string;
 
   productList: ProductItemModel [] = new Array<ProductItemModel>();
 }

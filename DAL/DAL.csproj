@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201804241326160_AddedNameToUser.Designer.cs">
       <DependentUpon>201804241326160_AddedNameToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804261446348_ChangedProductTypeToString.cs" />
+    <Compile Include="Migrations\201804261446348_ChangedProductTypeToString.Designer.cs">
+      <DependentUpon>201804261446348_ChangedProductTypeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804261448191_AddProductTypeStringRestriction.cs" />
+    <Compile Include="Migrations\201804261448191_AddProductTypeStringRestriction.Designer.cs">
+      <DependentUpon>201804261448191_AddProductTypeStringRestriction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ShapeMeDBContext.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
@@ -86,6 +94,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804241326160_AddedNameToUser.resx">
       <DependentUpon>201804241326160_AddedNameToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804261446348_ChangedProductTypeToString.resx">
+      <DependentUpon>201804261446348_ChangedProductTypeToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804261448191_AddProductTypeStringRestriction.resx">
+      <DependentUpon>201804261448191_AddProductTypeStringRestriction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

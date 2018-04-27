@@ -8,17 +8,6 @@ using Newtonsoft.Json.Converters;
 
 namespace DAL.Entities
 {
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum ProductType
-    {
-        sculpture,
-        fountain,
-        tile,
-        souvenir,
-        flowerpot,
-        gallery
-    }
-
     [Table("ProductGroups")]
     public class ProductGroupEntity : BaseEntity
     {
@@ -30,7 +19,8 @@ namespace DAL.Entities
         public string Name { get; set; }
 
         [Required]
-        public ProductType ProductType { get; set; } 
+        [MaxLength(50)]
+        public string ProductType { get; set; } 
 
         public virtual List<ProductItemEntity> ProductList { get; set; }
     }
