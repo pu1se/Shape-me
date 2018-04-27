@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -12,7 +13,31 @@ namespace DAL
 {
     public class UserManager : IDisposable
     {
-        public virtual UserEntity CurrentUser => HttpContext.Current?.Session["CurrentUser"] as UserEntity;
+        private UserEntity _currentUser;
+        public virtual UserEntity CurrentUser
+        {
+            get
+            {
+                if (_currentUser == null)
+                {
+                    var userIdentity = HttpContext.Current?.User?.Identity as ClaimsIdentity;
+                    if (userIdentity == null)
+                        return null;
+
+                    var userId = int.Parse(userIdentity.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
+                    var email = userIdentity.Claims.First(x => x.Type == ClaimTypes.Email).Value;
+                    var name = userIdentity.Claims.First(x => x.Type == ClaimTypes.Name).Value;
+
+                    _currentUser = new UserEntity
+                    {
+                        UserId = userId,
+                        Email = email,
+                        Name = name
+                    };
+                }
+                return _currentUser;
+            }
+        }
 
         public UserEntity GetUser(string email, string password)
         {
@@ -25,14 +50,6 @@ namespace DAL
                 var user = storage.Users.Get(x => x.Email == email && x.PasswordHash == hashedPassword);
                 return user;
             }
-        }
-
-        public void ChangePassword(long currentUserId, string oldPassword, string newPassword)
-        {
-        }
-
-        public void RecoverPassword(string userEmail)
-        {            
         }
 
         public void Dispose()

@@ -16,43 +16,7 @@ namespace ServicesApi
         protected UserManager UserManager = new UserManager();
         protected Storage Storage = new Storage();
 
-        protected IAuthenticationManager Authentication => Request.GetOwinContext().Authentication;
-
-        private UserEntity _currentUser;
-        internal UserEntity CurrentUser
-        {
-            get
-            {
-                if (Authentication.User.Identity.IsAuthenticated)
-                {
-                    if (_currentUser == null)
-                    {
-                        _currentUser = GetCurrentUserFromContext();
-                    }
-                }
-                else
-                {
-                    _currentUser = null;
-                }
-                return _currentUser;
-            }
-        }
-
-        private UserEntity GetCurrentUserFromContext()
-        {
-            var userId = int.Parse(Authentication.User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value);
-            var email = Authentication.User.Claims.First(x => x.Type == ClaimTypes.Email).Value;
-            var name = Authentication.User.Claims.First(x => x.Type == ClaimTypes.Name).Value;
-
-            var user = new UserEntity
-            {
-                UserId = userId,
-                Email = email,
-                Name = name
-            };
-
-            return user;
-        }
+        internal UserEntity CurrentUser => UserManager.CurrentUser;
 
         protected override void Dispose(bool disposing)
         {

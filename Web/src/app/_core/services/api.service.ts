@@ -12,30 +12,43 @@ export class ApiService {
   constructor(private http: HttpClient, private auth: AuthService) { }
 
 
-  get(url: string, params: object = {}): Observable<any>{
+  get(url: string, data: object = {}): Observable<any>{
 
-    return this.request('get', url, params);
+    let params = new HttpParams();
+
+    for(var i in data){
+      params = params.set(i, data[i]);
+    }
+
+    return this.http.get(this.CONST_BASE_URL+url, {params, headers: this.getHttpHeader()}).catch((err) => {
+
+      alert(JSON.stringify(err));
+
+      return Observable.throw(err)
+    });
 
   }
 
 
-  post(url: string, params: object = {}): Observable<any>{
+  post(url: string, data: object = {}): Observable<any>{
 
-    return this.request('post', url, {}, params);
+    let body = new HttpParams();
+
+    for(var i in data){
+      body = body.set(i, data[i]);
+    }
+
+    return this.http.post(this.CONST_BASE_URL+url, body, {headers:this.getHttpHeader(),responseType: 'text'}).catch((err) => {
+
+      alert(JSON.stringify(err));
+
+      return Observable.throw(err)
+    });
 
   }
 
 
-  private request(method: string, url: string, urlParams: object = {}, body: object = {}): Observable<any>{
-    const httpRequestParams = this.getHttpParams(body, urlParams);
-    return this.http.request(method, this.CONST_BASE_URL +url, httpRequestParams);
-  }
-
-
-  private getHttpParams(body: object, urlParams: object) {
-    let parameters = Object.keys(urlParams)
-      .reduce((httpParams, param) => httpParams.set(param, urlParams[param]), new HttpParams());
-
+  public getHttpHeader(){
     let headers = new HttpHeaders();
 
     headers = headers
@@ -50,7 +63,6 @@ export class ApiService {
       headers = headers.set('Authorization', 'Bearer ' + token);
     }
 
-    const result = { body, headers, params: parameters };
-    return result;
+    return headers;
   }
 }

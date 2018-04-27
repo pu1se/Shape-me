@@ -30,11 +30,11 @@ namespace DAL
                         case EntityState.Added:
                             entity.CreatedDate = now;
                             entity.LastChangedDate = now;
-                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
+                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId ?? 0;
                             break;
                         case EntityState.Modified:
                             entity.LastChangedDate = now;
-                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId;
+                            entity.LastChangedByUserId = userManager.CurrentUser?.UserId ?? 0;
                             break;
                     }
                 }

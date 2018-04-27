@@ -31,6 +31,7 @@ namespace DalTests
                     Email = adminEmail,
                     Name = "Павел П",
                     PasswordHash = PasswordUtil.GetHash("password"),
+                    LastChangedByUserId = 1
                 };
 
                 storage.Users.Save(user);

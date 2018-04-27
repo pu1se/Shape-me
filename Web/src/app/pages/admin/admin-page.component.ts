@@ -8,6 +8,8 @@ import {AuthService} from "../../_core/services/auth.service";
 })
 export class AdminPageComponent implements OnInit {
 
+  public tabName: string;
+
   constructor(public auth: AuthService) { }
 
   ngOnInit() {

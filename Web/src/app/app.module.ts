@@ -23,6 +23,7 @@ import {AuthService} from "./_core/services/auth.service";
 import {ApiService} from "./_core/services/api.service";
 import {HttpClientModule} from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProductListComponent } from './pages/admin/edit-product-list/edit-product-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminPageComponent,
     LoginComponent,
     EditInfoComponent,
+    EditProductListComponent,
   ],
   imports: [
     BrowserModule,
