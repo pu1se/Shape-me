@@ -63,7 +63,7 @@ export class EditProductListComponent implements OnInit {
   }
 
 
-  onAddItem(item: ProductGroupModel){
+  onAddItem(){
 
     this.editedItem = new ProductGroupModel(0, "", "", "", null);
     this.list.push(this.editedItem);
