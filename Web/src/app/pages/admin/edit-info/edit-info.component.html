@@ -1,3 +1,40 @@
-<p>
-  edit-info works!
-</p>
+<div class="col-md-4 offset-md-1">
+
+  <form [formGroup]="this.form" (ngSubmit)="this.onSubmit()" novalidate>
+
+    <div class="row">
+      <input type="text" formControlName="email" placeholder="Email" class="form-control" autocomplete="false"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.form.controls.email.invalid">
+        <div [hidden]="!this.form.controls.email.errors?.email">Email is incorrect</div>
+        <div [hidden]="!this.form.controls.email.errors?.required">Email is required</div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <input type="password" formControlName="oldPassword" placeholder="Старый пароль" class="form-control" autocomplete="false"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.form.controls.oldPassword.invalid">
+        <div [hidden]="!this.form.controls.oldPassword.errors?.required">Password is required</div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <input type="password" formControlName="newPassword" placeholder="Новый пароль" class="form-control"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.form.controls.newPassword.invalid">
+        <div [hidden]="!this.form.controls.newPassword.errors?.required">Password is required</div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <input type="password" formControlName="repeatNewPassword" placeholder="Повторите новый пароль" class="form-control"/>
+      <div class="alert alert-danger" *ngIf="this.formWasSubmitted && this.form.controls.repeatNewPassword.invalid">
+        <div [hidden]="!this.form.controls.repeatNewPassword.errors?.required">Password is required</div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <button type="submit" class="btn" style="width: 100%;">Сохранить</button>
+    </div>
+
+  </form>
+
+</div>

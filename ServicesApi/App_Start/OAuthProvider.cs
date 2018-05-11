@@ -62,7 +62,7 @@ namespace ServicesApi
         {
             IDictionary<string, string> data = new Dictionary<string, string>
             {
-                { "userName", user.Name }
+                { "userName", user.Email }
             };
             return new AuthenticationProperties(data);
         }

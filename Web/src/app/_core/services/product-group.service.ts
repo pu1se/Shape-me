@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import {ProductGroupModel} from "../models/product-group.model";
 import {ProductItemModel} from "../models/product-item.model";
 import {KeyValue} from "../models/key-value";
+import {ApiService} from "./api.service";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class ProductGroupService {
 
   groupList: ProductGroupModel[];
 
-  constructor() {
+  constructor(private api: ApiService) {
 
     this.groupList = [
 
-      <ProductGroupModel>{name: 'Скульптуры', type: 'sculpture',
+      <ProductGroupModel>{name: 'Скульптуры', productType: 'sculpture',
         productList: [
           { name: '02', imageUrl: '/assets/images/sculpture/02.jpg' },
           { name: '14', imageUrl: '/assets/images/sculpture/14.jpg' },
@@ -25,7 +27,7 @@ export class ProductGroupService {
         ] },
 
 
-      <ProductGroupModel>{name: 'Фонтаны', type: 'fountain',
+      <ProductGroupModel>{name: 'Фонтаны', productType: 'fountain',
         productList: [
           { name: '12', imageUrl: '/assets/images/fountain/12.jpg' },
           { name: '14', imageUrl: '/assets/images/fountain/14.jpg' },
@@ -37,7 +39,7 @@ export class ProductGroupService {
           { name: '52', imageUrl: '/assets/images/fountain/52.jpg' },
         ] },
 
-      <ProductGroupModel>{name: 'Декоры', type: 'decor',
+      <ProductGroupModel>{name: 'Декоры', productType: 'decor',
         productList: [
           { name: '058', imageUrl: '/assets/images/decor/058.jpg' },
           { name: '060', imageUrl: '/assets/images/decor/060.jpg' },
@@ -62,7 +64,7 @@ export class ProductGroupService {
           { name: '746', imageUrl: '/assets/images/decor/746.jpg' },
         ] },
 
-      <ProductGroupModel>{name: 'Израсцы', type: 'ornamented-tile',
+      <ProductGroupModel>{name: 'Израсцы', productType: 'ornamented-tile',
         productList: [
           { name: '49', imageUrl: '/assets/images/ornamented-tile/49.jpg' },
           { name: '51', imageUrl: '/assets/images/ornamented-tile/51.jpg' },
@@ -74,7 +76,7 @@ export class ProductGroupService {
           { name: '91', imageUrl: '/assets/images/ornamented-tile/91.jpg' },
         ] },
 
-      <ProductGroupModel>{name: 'Плитки', type: 'tile',
+      <ProductGroupModel>{name: 'Плитки', productType: 'tile',
         productList: [
           { name: 'Mankhetten 1', imageUrl: '/assets/images/tile/Mankhetten1.jpg' },
           { name: 'Mankhetten 6', imageUrl: '/assets/images/tile/Mankhetten6.jpg', isBest: true },
@@ -92,7 +94,7 @@ export class ProductGroupService {
         ] },
 
 
-      <ProductGroupModel>{name: 'Сувениры', type: 'souvenir',
+      <ProductGroupModel>{name: 'Сувениры', productType: 'souvenir',
         productList: [
           { name: '01', imageUrl: '/assets/images/souvenir/01.jpg' },
           { name: '04', imageUrl: '/assets/images/souvenir/04.jpg', isBest: true },
@@ -119,7 +121,7 @@ export class ProductGroupService {
         ] },
 
 
-      <ProductGroupModel>{name: 'Кашпо', type: 'flowerpot',
+      <ProductGroupModel>{name: 'Кашпо', productType: 'flowerpot',
         productList: [
           { name: '14', imageUrl: '/assets/images/flowerpot/14.jpg' },
           { name: '18', imageUrl: '/assets/images/flowerpot/18.jpg' },
@@ -131,7 +133,7 @@ export class ProductGroupService {
         ] },
 
 
-      <ProductGroupModel>{name: 'Галерея', type: 'gallery',
+      <ProductGroupModel>{name: 'Галерея', productType: 'gallery',
         productList: [
           { name: '05', imageUrl: '/assets/images/gallery/05.jpg' },
           { name: '06', imageUrl: '/assets/images/gallery/06.jpg' },
@@ -148,7 +150,7 @@ export class ProductGroupService {
     ];
 
     for (const item of this.groupList){
-      item.link = '/product/' + item.type;
+      item.link = '/product/' + item.productType;
     }
 
   }
@@ -158,10 +160,31 @@ export class ProductGroupService {
   }
 
   getItemByType( type: string ): ProductGroupModel {
-    return this.groupList.filter(x => x.type === type)[0];
+    return this.groupList.filter(x => x.productType === type)[0];
   }
 
   getNavigationLinkList(): Array<KeyValue>{
     return this.groupList.map(x => new KeyValue(x.name,x.link));
   }
+
+
+
+
+  // dinamic api
+  getProductGroupList():Observable<ProductGroupModel[]> {
+    return this.api.get('products');
+  }
+
+  addProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
+  editProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
+  deleteProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
 }

@@ -3,7 +3,7 @@
     <div class="collapse-control" (click)="this.isCollapsed = !this.isCollapsed">
       <i class="fa fa-plus" [class.active]="!this.isCollapsed" aria-hidden="true"></i>
     </div>
-    <div id="{{item.type}}" class="collapse-text" (click)="this.isCollapsed = !this.isCollapsed" [class.active]="!this.isCollapsed">
+    <div id="{{item.productType}}" class="collapse-text" (click)="this.isCollapsed = !this.isCollapsed" [class.active]="!this.isCollapsed">
       <span class="name">{{ item.name }}</span>
     </div>
     <div class="link">

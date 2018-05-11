@@ -1,7 +1,35 @@
 <div class="container">
 
-  <app-login *ngIf="this.auth.isAuthenticated == false"></app-login>
+  <div class="offset" *ngIf="this.auth.isAuthenticated == false">
+    <app-login ></app-login>
+  </div>
 
-  <app-edit-info *ngIf="this.auth.isAuthenticated"></app-edit-info>
+  <div *ngIf="this.auth.isAuthenticated">
 
+    <ul class="nav nav-tabs">
+
+      <li class="nav-item">
+        <a class="nav-link" (click)="this.tabName='product-list'" [class.active]="this.tabName=='product-list' || !this.tabName">
+          Список Продуктов
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" (click)="this.tabName='edit-info'" [class.active]="this.tabName=='edit-info'">
+          Данные Пользователя
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="wrapper">
+      <div *ngIf="this.tabName == 'product-list' || !this.tabName">
+        <app-edit-product-list></app-edit-product-list>
+      </div>
+      <div *ngIf="this.tabName == 'edit-info'">
+        <app-edit-info></app-edit-info>
+      </div>
+    </div>
+
+
+  </div>
 </div>

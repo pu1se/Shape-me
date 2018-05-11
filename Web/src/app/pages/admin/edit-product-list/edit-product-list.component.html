@@ -1,0 +1,61 @@
+
+
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col" style="width: 7%">#</th>
+    <th scope="col">Имя</th>
+    <th scope="col" style="width: 25%">Url</th>
+    <th scope="col" style="width: 25%">Действие</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of list">
+    <ng-template [ngTemplateOutlet]="this.loadTemplate(item)"
+                 [ngTemplateOutletContext]="{ $implicit: item}">
+    </ng-template>
+  </tr>
+  <tr>
+    <td colspan="5">
+      <button class="btn" (click)="onAddItem()">
+        <i class="fas fa-plus"></i> Добавить
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
+<ng-template #viewItemTemplate let-item>
+  <td>{{item.productGroupId}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.productType}}</td>
+  <td>
+    <a (click)="this.onEditClick(item)" class="btn" title="Редактировать">
+      <i class="fas fa-pencil-alt"></i>
+    </a>
+    <a (click)="this.onDeleteClick(item)" class="btn" title="Удалить">
+      <i class="fas fa-times"></i>
+    </a>
+  </td>
+</ng-template>
+
+<ng-template #editItemTemplate let-item>
+  <td>
+    <input type="text" [(ngModel)]="item.productGroupId" readonly disabled class="form-control" />
+  </td>
+  <td>
+    <input type="text" [(ngModel)]="item.name" class="form-control" />
+  </td>
+  <td>
+    <input type="text" [(ngModel)]="item.productType" class="form-control" />
+  </td>
+  <td>
+    <a class="btn" (click)="this.onSaveClick(item)">
+      Сохранить
+    </a>
+    <a class="btn" (click)="this.onCancelClick(item)">
+      Отменить
+    </a>
+  </td>
+</ng-template>

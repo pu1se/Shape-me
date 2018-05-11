@@ -11,7 +11,8 @@ namespace DAL
         public DateTime CreatedDate { get; set; }
         [Required]
         public DateTime LastChangedDate { get; set; }
-        public int? LastChangedByUserId { get; set; }
+        [Required]
+        public int LastChangedByUserId { get; set; }
 
         protected BaseEntity()
         {

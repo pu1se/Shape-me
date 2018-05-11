@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using DAL;
+using DAL.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -21,30 +26,59 @@ namespace ServicesApi.Controllers
     [RoutePrefix("api/Account")]
     public class AccountController : BaseController
     {
-        public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
-        // POST api/Account/Logout
+        [HttpPost]
         [Route("Logout")]
         public IHttpActionResult Logout()
         {
-            Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
+            Request.GetOwinContext().Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             return Ok();
         }
-        
 
-        // POST api/Account/ChangePassword
-        [Route("ChangePassword")]
-        public IHttpActionResult ChangePassword(ChangePasswordBindingModel model)
+
+        [HttpPost]
+        [Route("changeUserInfo")]
+        public IHttpActionResult ChangeAccountInfo([FromBody]ChangeUserInfoViewModel model)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                throw new Exception(ConvertToErrorMessage(ModelState));
             }
 
-            UserManager.ChangePassword(CurrentUser.UserId, model.OldPassword,model.NewPassword);
+            var currentUser = Storage.Users.GetById(CurrentUser.UserId);
+            if (currentUser.PasswordHash != PasswordUtil.GetHash(model.OldPassword))
+            {
+                throw new Exception("Старый пароль не верный");
+            }
+
+
+
+            currentUser.Email = model.Email;
+            currentUser.Name = model.Email.Split('@')[0];
+            currentUser.PasswordHash = PasswordUtil.GetHash(model.NewPassword);
+
+            Storage.Users.Save(currentUser);
+
             return Ok();
         }
 
-        
+        private static string ConvertToErrorMessage(ModelStateDictionary modelState)
+        {
+            var errorMessages = modelState.SelectMany(m => m.Value.Errors, (m, e) => e.ErrorMessage);
+            var exeptions = modelState.SelectMany(m => m.Value.Errors, (m, e) => e.Exception);
+            var validationDetailMessage = new StringBuilder();
+
+            foreach (string errorMessage in errorMessages)
+            {
+                if (errorMessage.IsNullOrEmpty() == false)
+                    validationDetailMessage.AppendLine(errorMessage);
+            }
+            foreach (var item in exeptions)
+            {
+                if (item != null)
+                    validationDetailMessage.AppendLine(item.Message);
+            }
+            return validationDetailMessage.ToString();
+        }
     }
 }

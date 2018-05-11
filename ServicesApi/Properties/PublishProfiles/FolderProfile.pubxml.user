@@ -9,7 +9,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
-      <publishTime>04/25/2018 12:08:01</publishTime>
+      <publishTime>04/25/2018 13:42:46</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/22/2013 08:43:40</publishTime>
@@ -18,13 +18,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/22/2013 08:43:40</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>04/25/2018 12:08:01</publishTime>
+      <publishTime>04/25/2018 13:42:46</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>04/25/2018 12:08:52</publishTime>
+      <publishTime>04/25/2018 13:43:39</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>04/25/2018 12:08:52</publishTime>
+      <publishTime>04/25/2018 13:43:39</publishTime>
     </File>
     <File Include="bin/DAL.dll">
       <publishTime>04/25/2018 11:21:44</publishTime>
@@ -258,10 +258,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2017 23:42:00</publishTime>
     </File>
     <File Include="bin/ServicesApi.dll">
-      <publishTime>04/25/2018 12:08:46</publishTime>
+      <publishTime>04/25/2018 13:43:32</publishTime>
     </File>
     <File Include="bin/ServicesApi.pdb">
-      <publishTime>04/25/2018 12:08:46</publishTime>
+      <publishTime>04/25/2018 13:43:32</publishTime>
     </File>
     <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
       <publishTime>06/27/2017 11:17:34</publishTime>
@@ -333,7 +333,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2018 15:44:22</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/25/2018 12:08:47</publishTime>
+      <publishTime>04/25/2018 13:43:34</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>04/13/2018 15:44:22</publishTime>
@@ -387,7 +387,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/13/2018 15:44:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/25/2018 12:08:46</publishTime>
+      <publishTime>04/25/2018 13:43:32</publishTime>
     </File>
   </ItemGroup>
 </Project>
