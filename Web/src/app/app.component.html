@@ -1,59 +1,85 @@
 
-<header>
-    <div class="header-logo">
-        <a routerLink="/">
+<header class="">
+
+  <div class="container-fluid">
+
+    <div class="row" style="width: 100%">
+
+      <div class="col-md-3">
+
+        <div class="row header-logo navbar-brand">
+
+          <a routerLink="/">
             <img src="../assets/images/logo.png"/>
-        </a>
-    </div>
+          </a>
 
-    <div class="container-fluid" style="padding-left: 25vw;">
+        </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="contacts">
-            <div class="contact-info">
-              <a href="tel:+375-29-701-97-58">
-                <i class="fas fa-phone"></i>
-                +375-29-701-97-58
-              </a>
-              <a href="tel:+375-44-783-19-54">
-                <i class="fa fa-phone delimeter"></i>
-                +375-44-783-19-54
-              </a>
-              <a href="mailto:bonn.ceramic@mail.ru">
-                <i class="far fa-envelope delimeter"></i>
-                bonn.ceramic@mail.ru
-              </a>
-              <a routerLink="/admin" *ngIf="this.auth.isAuthenticated">
-                <i class="fas fa-user delimeter"></i>
-                admin
-              </a>
-              <a (click)="this.onLogOutClick()" *ngIf="this.auth.isAuthenticated">
-                <i class="fas fa-sign-out-alt delimeter"></i>
-                выход
-              </a>
+      </div>
 
-            </div>
+      <div class="col-md-9">
+
+        <div class="row contact-info">
+
+          <div class="col offset-lg-4">
+            <a href="tel:+375-29-701-97-58">
+              <i class="fas fa-phone"></i>
+              +375-29-701-97-58
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="tel:+375-44-783-19-54">
+              <i class="fa fa-phone delimeter"></i>
+              +375-44-783-19-54
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="mailto:bonn.ceramic@mail.ru">
+              <i class="far fa-envelope delimeter"></i>
+              bonn.ceramic@mail.ru
+            </a>
+          </div>
+
+        </div>
+
+        <div class="row" *ngIf="this.auth.isAuthenticated">
+          <div class="col  offset-5">
+            <a routerLink="/admin">
+              <i class="fas fa-user delimeter"></i>
+              admin
+            </a>
+          </div>
+
+          <div class="col">
+            <a (click)="this.onLogOutClick()">
+              <i class="fas fa-sign-out-alt delimeter"></i>
+              выход
+            </a>
           </div>
         </div>
-      </div>
 
-
-      <div class="row">
-        <div class="col">
-          <nav id="nav-menu-container">
-            <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
-              <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Главная</a></li>
-              <li *ngFor="let link of navigationLinkList">
-                <a routerLink="{{link.value}}" routerLinkActive="active">{{link.key}}</a>
-              </li>
-              <li><a routerLink="/about-us">О нас</a></li>
-            </ul>
+        <div class="row">
+          <nav class="col navbar navbar-expand-lg navbar-light">
+              <ul class="navbar-nav mr-auto navbar-right collapse navbar-collapse justify-content-end" style="touch-action: pan-y;">
+                <li><a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Главная</a></li>
+                <li *ngFor="let link of navigationLinkList">
+                  <a class="nav-item nav-link" routerLink="{{link.value}}" routerLinkActive="active">{{link.key}}</a>
+                </li>
+                <li><a class="nav-item nav-link" routerLink="/about-us"  routerLinkActive="active">О нас</a></li>
+              </ul>
           </nav>
         </div>
+
+
+
       </div>
 
     </div>
+
+  </div>
+
 </header>
 
 <div class="main">

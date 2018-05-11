@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import {ProductGroupModel} from "../models/product-group.model";
 import {ProductItemModel} from "../models/product-item.model";
 import {KeyValue} from "../models/key-value";
+import {ApiService} from "./api.service";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class ProductGroupService {
 
   groupList: ProductGroupModel[];
 
-  constructor() {
+  constructor(private api: ApiService) {
 
     this.groupList = [
 
@@ -164,4 +166,25 @@ export class ProductGroupService {
   getNavigationLinkList(): Array<KeyValue>{
     return this.groupList.map(x => new KeyValue(x.name,x.link));
   }
+
+
+
+
+  // dinamic api
+  getProductGroupList():Observable<ProductGroupModel[]> {
+    return this.api.get('products');
+  }
+
+  addProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
+  editProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
+  deleteProductGroup(item: ProductGroupModel){
+    alert(JSON.stringify(item));
+  }
+
 }

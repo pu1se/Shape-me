@@ -11,18 +11,16 @@ namespace ServicesApi.Controllers
     [Authorize]
     public class ProductsController : BaseController
     {
+        [AllowAnonymous]
+        [HttpGet]
         public IEnumerable<ProductGroupEntity> Get()
         {
             var result = Storage.ProductGroups.GetAll();
             return result;
         }
 
-        public ProductGroupEntity Get(int id)
-        {
-            return Storage.ProductGroups.GetById(id);
-        }
-
         [Route("Add")]
+        [HttpPost]
         public IHttpActionResult Add(int id, [FromBody]ProductGroupEntity value)
         {
             Storage.ProductGroups.Save(value);
@@ -30,6 +28,7 @@ namespace ServicesApi.Controllers
         }
 
         [Route("Edit")]
+        [HttpPost]
         public IHttpActionResult Edit([FromBody]ProductGroupEntity value)
         {
             Storage.ProductGroups.Save(value);
@@ -37,6 +36,7 @@ namespace ServicesApi.Controllers
         }
 
         [Route("Delete")]
+        [HttpPost]
         public IHttpActionResult Delete(int id)
         {
             Storage.ProductGroups.Delete(id);

@@ -73,6 +73,8 @@
     <Content Include=".editorconfig" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="robots.txt" />
+    <Content Include="sitemap.xml" />
     <Content Include="src\app\app.component.scss" />
     <Content Include="src\app\pages\about-us\about-us-page.component.html" />
     <Content Include="src\app\pages\home\advantages-panel\advantages-panel.component.html" />

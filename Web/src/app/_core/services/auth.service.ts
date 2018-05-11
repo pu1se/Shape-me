@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import {UserModel} from "../models/user.model";
-import {ApiService} from "./api.service";
 import {Router} from '@angular/router';
-import * as jwt from 'jwt-decode';
 import {HttpClient, HttpParams,HttpHeaders} from '@angular/common/http';
+import {Config} from './_config';
 
 @Injectable()
 export class AuthService {
 
   private _currentUser: UserModel;
-  public CONST_BASE_URL = 'http://localhost:63866/api/';
   private CONST_TOKEN_NAME = 'shape_me_token';
   private CONST_USER_NAME = 'shape_me_username';
   private CONST_EXPIRES = 'shape_me_expires';
@@ -24,7 +22,7 @@ export class AuthService {
       .set('password', password);
 
     try{
-      this.http.post(this.CONST_BASE_URL+'token', body.toString()).subscribe(
+      this.http.post(Config.CONST_BASE_URL+'token', body.toString()).subscribe(
         response => {
 
           localStorage.setItem(this.CONST_TOKEN_NAME, response["access_token"]);
@@ -56,7 +54,7 @@ export class AuthService {
       headers = headers.set('Authorization', 'Bearer ' + token);
     }
 
-    this.http.post(this.CONST_BASE_URL+'Account/Logout',{}, {headers: headers});
+    this.http.post(Config.CONST_BASE_URL+'Account/Logout',{}, {headers: headers});
 
     this._currentUser = null;
     localStorage.removeItem(this.CONST_TOKEN_NAME);

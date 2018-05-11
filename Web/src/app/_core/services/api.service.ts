@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import {AuthService} from "./auth.service";
+import { Config } from './_config';
 
 
 @Injectable()
 export class ApiService {
-
-  public CONST_BASE_URL = 'http://localhost:63866/api/';
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
@@ -20,7 +19,7 @@ export class ApiService {
       params = params.set(i, data[i]);
     }
 
-    return this.http.get(this.CONST_BASE_URL+url, {params, headers: this.getHttpHeader()}).catch((err) => {
+    return this.http.get(Config.CONST_BASE_URL+url, {params, headers: this.getHttpHeader()}).catch((err) => {
 
       alert(JSON.stringify(err));
 
@@ -38,7 +37,7 @@ export class ApiService {
       body = body.set(i, data[i]);
     }
 
-    return this.http.post(this.CONST_BASE_URL+url, body, {headers:this.getHttpHeader(),responseType: 'text'}).catch((err) => {
+    return this.http.post(Config.CONST_BASE_URL+url, body, {headers:this.getHttpHeader(),responseType: 'text'}).catch((err) => {
 
       alert(JSON.stringify(err));
 
