@@ -79,7 +79,7 @@ $text-offset: $a-height - 460;
 
                     }
 
-                    h2 {
+                    .max-bold {
                         @include main-light-font-bold;
                         text-transform:uppercase;
                         margin-bottom:2px;

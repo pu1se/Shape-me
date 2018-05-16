@@ -8,14 +8,14 @@ import {AdminPageComponent} from "./pages/admin/admin-page.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
-    { path: 'product/:type', component: ProductPageComponent },
+    { path: 'catalog/:type', component: ProductPageComponent },
     { path: 'about-us', component: AboutUsPageComponent },
     { path: 'admin', component: AdminPageComponent },
     { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
     exports: [RouterModule]
 })
 

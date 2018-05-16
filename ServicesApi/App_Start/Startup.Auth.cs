@@ -37,7 +37,6 @@ namespace ServicesApi
             {
                 TokenEndpointPath = new PathString("/api/token"),
                 Provider = new OAuthProvider(PublicClientId),
-                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 // In production mode set AllowInsecureHttp = false
                 AllowInsecureHttp = true

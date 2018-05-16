@@ -150,7 +150,7 @@ export class ProductGroupService {
     ];
 
     for (const item of this.groupList){
-      item.link = '/product/' + item.productType;
+      item.link = '/catalog/' + item.productType;
     }
 
   }

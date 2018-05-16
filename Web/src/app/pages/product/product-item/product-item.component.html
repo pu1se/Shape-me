@@ -4,6 +4,6 @@
                 'background-size': 'contain'}"
      [ngClass]="{'active': this.isActive}"
   >
-  <h4>{{item.name}}</h4>
+  <div class="bold">{{item.name}}</div>
   <p *ngIf="item.price">{{item.price}} р</p>
 </div>
