@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /?*
 
-Host: http://www.bonn-ceramic.by/
-Sitemap: http://www.bonn-ceramic.by/sitemap.xml
+Host: http://bonn-ceramic.by/
+Sitemap: http://bonn-ceramic.by/sitemap.xml

@@ -9,13 +9,14 @@ import {AdminPageComponent} from "./pages/admin/admin-page.component";
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'catalog/:type', component: ProductPageComponent },
-    { path: 'about-us', component: AboutUsPageComponent },
+    { path: 'contacts', component: AboutUsPageComponent },
     { path: 'admin', component: AdminPageComponent },
-    { path: '**', component: PageNotFoundComponent }
+    {path: '404', component: PageNotFoundComponent},
+    { path: '**', redirectTo: '/404' }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes, {useHash: false})],
+    imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
 

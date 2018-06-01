@@ -1,11 +1,17 @@
 @import "~assets/styles/style-variables.scss";
 
 carousel .item img{
-  display: block; height: 90vh; width: 100%;
+  display: block;
+  height: 90vh;
+  width: 100%;
   animation-name: img-animation;
   animation-duration: 15s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
+
+  @media only screen and (max-width : 800px) {
+    height: 75vh;
+  }
 }
 
 @keyframes img-animation {
@@ -30,6 +36,7 @@ carousel .item img{
   left: 55%;
   width: 45%;
   bottom: 0;
+
 
 
   .max-bold{
