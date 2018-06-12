@@ -10,6 +10,8 @@
   cursor: zoom-in;
   transform: translateZ(0px);
   z-index: 2;
+  min-width: 250px;
+  min-height: 320px;
 
   transition: transform 1s;
   transform-origin: 0 0;

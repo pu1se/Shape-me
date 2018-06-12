@@ -101,7 +101,7 @@ header[_ngcontent-c0]   .navbar-nav[_ngcontent-c0]   a.active[_ngcontent-c0] {
 
 .main[_ngcontent-c0] {
   margin: 85px 0 0 0;
-  background-image: url(http://proceramic.com.ua/images/2017/06/01/04.jpg);
+  background-image: url('/assets/images/background.jpg');
   background-size: cover;
   background-attachment: fixed;
   min-height: 84vh; }
