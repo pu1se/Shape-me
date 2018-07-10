@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {ProductItemModel} from "../../../_core/models/product-item.model";
+declare var $:any;
 
 @Component({
   selector: 'app-product-item',
@@ -21,6 +22,11 @@ export class ProductItemComponent implements OnInit {
   }
 
   onClick(){
+
+    //hack: not make image bigger, if device is a mobile phone
+    if ($(".menu-button").is(":visible"))
+      return;
+
     if (!this.isActive){
       this.onChange.emit();
     }

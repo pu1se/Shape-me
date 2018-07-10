@@ -74,6 +74,10 @@
   top: 3px;
   color: #afafaf;
   line-height: 40px;
+
+  @media only screen and (max-width : 800px) {
+    display: none;
+  }
 }
 
 

@@ -13,9 +13,6 @@
             <img src="../assets/images/logo.jpg"/>
           </a>
 
-          <a class="menu-button">
-            <i class="fas fa-bars fa-2x"></i>
-          </a>
         </div>
 
       </div>
@@ -26,22 +23,26 @@
 
           <div class="col offset-lg-4">
             <a href="tel:+375-29-701-97-58">
-              <i class="fas fa-phone"></i>
+              <i class="light fas fa-phone"></i>
               +375-29-701-97-58
             </a>
           </div>
 
           <div class="col">
             <a href="tel:+375-44-783-19-54">
-              <i class="fa fa-phone delimeter"></i>
+              <i class="light fa fa-phone delimeter"></i>
               +375-44-783-19-54
             </a>
           </div>
 
           <div class="col">
             <a href="mailto:bonn.ceramic@mail.ru">
-              <i class="far fa-envelope delimeter"></i>
+              <i class="light far fa-envelope delimeter"></i>
               bonn.ceramic@mail.ru
+            </a>
+
+            <a class="menu-button" (click)="this.onMenuButtonClick();">
+              <i class="fas fa-list-ul fa-2x"></i>
             </a>
           </div>
 
@@ -65,7 +66,7 @@
 
         <div class="row">
           <nav class="col navbar navbar-expand-lg navbar-light">
-              <ul class="navbar-nav mr-auto navbar-right collapse navbar-collapse justify-content-end" style="touch-action: pan-y;">
+              <ul class="navbar-nav mr-auto navbar-right justify-content-end collapse navbar-collapse " style="touch-action: pan-y;">
                 <li><a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Главная</a></li>
                 <li *ngFor="let link of navigationLinkList">
                   <a class="nav-item nav-link" routerLink="{{link.value}}" routerLinkActive="active">{{link.key}}</a>

@@ -35,6 +35,11 @@ export class ProductPageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: Params) =>{
       window.scrollTo(0, 0);
+      if ($(".menu-button").is(":visible"))
+      {
+        $(".navbar-nav").slideUp();
+        $(".menu-button").removeClass("active");
+      }
     });
   }
 

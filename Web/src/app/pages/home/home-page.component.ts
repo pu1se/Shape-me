@@ -30,6 +30,12 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.groupList = this.productGroupService.getList();
+
+    if ($(".menu-button").is(":visible"))
+    {
+      $(".navbar-nav").slideUp();
+      $(".menu-button").removeClass("active");
+    }
   }
 
 }

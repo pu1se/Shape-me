@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title, Meta} from "@angular/platform-browser";
+declare var $:any;
 
 @Component({
   selector: 'app-about-us-page',
@@ -21,6 +22,12 @@ export class AboutUsPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    if ($(".menu-button").is(":visible"))
+    {
+      $(".navbar-nav").slideUp();
+      $(".menu-button").removeClass("active");
+    }
+
   }
 
 }
