@@ -35,4 +35,8 @@
   p{
     @include main-dark-font-bold;
   }
+
+  @media only screen and (max-width : 800px) {
+    margin-left: 20%;
+  }
 }
